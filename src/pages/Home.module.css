@@ -1,0 +1,525 @@
+.page {
+  min-height: 100vh;
+  background: #000;
+}
+
+.hero {
+  position: relative;
+  min-height: 85vh;
+  width: 100%;
+}
+
+.coverImage {
+  object-fit: cover;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7));
+}
+
+.heroInner {
+  position: relative;
+  max-width: 1152px;
+  min-height: 85vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 112px 20px 80px;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 48px;
+  align-items: end;
+}
+
+.heroKicker {
+  font-family: var(--font-accent);
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.heroTitle {
+  margin-top: 20px;
+  max-width: 22ch;
+  font-size: 60px;
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.heroActions {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.btnPrimary,
+.btnGhost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 60px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 180ms ease;
+}
+
+.btnPrimary {
+  background: var(--brand-accent);
+  color: #000;
+}
+
+.btnPrimary:hover {
+  filter: brightness(0.95);
+}
+
+.btnGhost {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(2px);
+  border: 2px solid rgba(255, 255, 255, 0.656);
+}
+
+.btnGhost:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.heroDescWrap {
+  padding-bottom: 8px;
+}
+
+.heroDesc {
+  max-width: 42ch;
+  font-size: 14px;
+  line-height: 24px;
+  margin-left: auto;
+  text-align: right;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.productSection {
+  background: var(--brand-white);
+}
+
+.statsSection {
+  background: var(--brand-white);
+}
+
+.statsContainer {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+}
+
+.statItem {
+  display: flex;
+  padding: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.statItem:not(:first-child) {
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.statTop {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.statNumber {
+  font-size: 44px;
+  line-height: 1;
+  font-weight: 600;
+  color: #000;
+  align-self: center;
+}
+
+.statLabel {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  line-height: 1.45;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.7);
+  align-self: center;
+}
+.statsQuoteSection {
+  background: var(--brand-accent-light);
+}
+
+.statsQuoteContainer {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 44px 0;
+}
+.quote {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 72px;
+  padding: 0 44px;
+}
+
+.personCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.personAvatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.personName {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+}
+
+.personRole {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.quoteText {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.container {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 96px 20px 96px;
+}
+
+.productTop {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 56px;
+}
+
+.productKicker {
+  font-family: var(--font-accent);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.productLead {
+  font-size: 27px;
+  line-height: 1.2;
+  color: #000;
+}
+
+.staggerGrid {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.staggerPhoto {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #fff;
+}
+
+.photoMid {
+  margin-top: 40px;
+}
+
+.photoLow {
+  margin-top: 80px;
+}
+
+.services {
+  background: #fff;
+}
+
+.sectionTitle {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--brand-primary);
+}
+
+.sectionLead {
+  margin-top: 12px;
+  max-width: 672px;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.cards2 {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  background: #fff;
+  padding: 24px;
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--brand-primary);
+}
+
+.cardText {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.advantages {
+  background: #faf8f6;
+}
+
+.cards3 {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.advText {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--brand-secondary-dark);
+}
+
+.about {
+  background: #fff;
+}
+
+.aboutText {
+  margin-top: 16px;
+  max-width: 768px;
+  font-size: 14px;
+  line-height: 28px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 80vh;
+  }
+
+  .heroInner {
+    min-height: 80vh;
+    padding: 136px 14px 24px;
+  }
+
+  .heroGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .heroKicker {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+  }
+
+  .heroTitle {
+    margin-top: 10px;
+    max-width: 12ch;
+    font-size: 36px;
+    line-height: 0.98;
+    letter-spacing: -0.03em;
+  }
+
+  .heroActions {
+    margin-top: 18px;
+    gap: 8px;
+  }
+
+  .heroActions .btnPrimary,
+  .heroActions .btnGhost {
+    flex: 1;
+    height: 38px;
+    padding: 0 12px;
+    font-size: 13px;
+    border-radius: 10px;
+    white-space: nowrap;
+  }
+
+  .heroDescWrap {
+    padding-bottom: 0;
+  }
+
+  .heroDesc {
+    margin-left: 0;
+    text-align: left;
+    max-width: 36ch;
+    font-size: 15px;
+    line-height: 1.3;
+  }
+
+  .container {
+    padding: 32px 20px 36px;
+  }
+  .productTop {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .productLead {
+    font-size: 20px;
+    line-height: 1.22;
+  }
+  .productKicker {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+  }
+  .staggerGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .staggerPhoto {
+    aspect-ratio: 5 / 4;
+  }
+  .photoMid {
+    margin-top: 0;
+  }
+  .photoLow {
+    margin-top: 0;
+    grid-column: 1 / -1;
+    aspect-ratio: 16 / 10;
+  }
+
+  .statsContainer {
+    max-width: 100%;
+  }
+
+  .statsRow {
+    grid-template-columns: 1fr;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .statItem {
+    justify-content: center;
+    padding: 18px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .statItem:not(:first-child) {
+    border-left: 0;
+  }
+
+  .statTop {
+    gap: 10px;
+  }
+
+  .statNumber {
+    font-size: 36px;
+  }
+
+  .statLabel {
+    font-size: 15px;
+    line-height: 1.2;
+  }
+
+  .statsQuoteContainer {
+    padding: 24px 16px 28px;
+  }
+
+  .quote {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 0;
+  }
+
+  .personCard {
+    gap: 8px;
+  }
+
+  .personName {
+    font-size: 16px;
+  }
+
+  .personRole {
+    font-size: 12px;
+  }
+
+  .quoteText {
+    font-size: 16px;
+    line-height: 1.24;
+  }
+  .cards2 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .card {
+    padding: 16px;
+  }
+  .cardTitle {
+    font-size: 16px;
+  }
+  .cardText {
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .cards3 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .advText {
+    font-size: 12px;
+  }
+  .aboutText {
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .aboutTextTitle {
+    font-size: 16px;
+  }
+  .aboutTextDescription {
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .aboutTextContent {
+    padding: 0 16px;
+  }
+  .aboutTextImage {
+    height: 200px;
+  }
+}
