@@ -217,6 +217,272 @@
   color: rgba(0, 0, 0, 0.7);
 }
 
+.showcaseSection {
+  background: #fff;
+  padding: 90px 20px 50px 20px;
+}
+
+.showcaseContainer {
+  max-width: 1152px;
+  margin: 0 auto;
+}
+
+.showcaseTop {
+  display: grid;
+  grid-template-columns: 7fr 3fr;
+  align-items: end;
+  gap: 24px;
+}
+
+.showcaseLead {
+  margin: 0;
+  max-width: none;
+  font-size: 30px;
+  line-height: 1.06;
+  font-weight: 600;
+  color: #1f1f1f;
+}
+
+.showcaseReadMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  justify-self: end;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  color: #1f1f1f;
+  text-decoration: none;
+}
+
+.showcaseReadMore:hover {
+  opacity: 0.7;
+}
+
+.showcaseReadMore .contactCtaIcon {
+  width: 14px;
+  height: 14px;
+  align-self: end;
+}
+
+.showcaseGrid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 36px;
+}
+
+.showcaseFeatureList {
+  border-top: 1px solid rgba(0, 0, 0, 0.14);
+}
+
+.showcaseFeatureItem {
+  margin: 0;
+  display: block;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  padding: 14px 0;
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 1.15;
+  text-align: left;
+  font-family: inherit;
+  color: rgba(0, 0, 0, 0.35);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+  cursor: pointer;
+  transition: color 160ms ease, border-color 160ms ease;
+}
+
+.showcaseFeatureItemActive {
+  color: #1f1f1f;
+  border-bottom-color: #e1a883;
+}
+
+.showcaseFeatureItem:hover {
+  color: #1f1f1f;
+}
+
+.showcaseFeatureItem:focus-visible {
+  outline: 2px solid #e1a883;
+  outline-offset: 4px;
+}
+
+.showcaseFeatureHeadline {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 500;
+  color: #1f1f1f;
+}
+
+.showcaseFeatureHeaderRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.showcaseFeatureToggle {
+  border: 0;
+  place-self: center;
+  background: transparent;
+  color: #e1a883;
+  font-size: 34px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  flex: 0 0 auto;
+}
+
+.showcaseFeatureDetails {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: max-height 280ms ease, opacity 220ms ease, transform 280ms ease;
+}
+
+.showcaseFeatureDetailsOpen {
+  max-height: 260px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.showcaseFeatureDetailsText {
+  margin: 12px 0 14px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: rgba(0, 0, 0, 0.56);
+}
+
+.showcaseFeatureImageWrap {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.sustainabilitySection {
+  background: #fff;
+  padding: 50px 0;
+}
+
+.sustainabilityMedia {
+  position: relative;
+  min-height: 560px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 48px 200px;
+}
+
+.sustainabilityMedia::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 17, 12, 0.22);
+  z-index: 1;
+}
+
+.sustainabilityVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sustainabilityCard {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 470px);
+  background: rgba(255, 255, 255, 0.95);
+  color: #1e1e1e;
+  padding: 36px 44px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+}
+
+.sustainabilityKicker {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.55);
+  text-align: center;
+}
+
+.sustainabilityTitle {
+  margin: 8px 0 16px;
+  font-size: 30px;
+  line-height: 1.05;
+  font-weight: 400;
+  color: #1f1f1f;
+  text-align: center;
+}
+
+.sustainabilityText {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: rgba(0, 0, 0, 0.62);
+}
+
+.contactCtaSection {
+  background: #fff;
+  padding: 50px 20px 90px 20px;
+}
+
+.contactCtaInner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contactCtaTitle {
+  margin: 0;
+  font-size: 35px;
+  line-height: 1.08;
+  font-weight: 400;
+  color: #1f1f1f;
+}
+
+.contactCtaText {
+  margin: 20px auto 26px;
+  max-width: 620px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.56);
+}
+
+.contactCtaLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 500;
+  color: #1f1f1f;
+  text-decoration: none;
+  transition: opacity 160ms ease;
+}
+
+.contactCtaIcon {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  flex: 0 0 auto;
+}
+
+.contactCtaLink:hover {
+  opacity: 0.7;
+}
+
 .container {
   max-width: 1152px;
   margin: 0 auto;
@@ -263,81 +529,6 @@
 
 .photoLow {
   margin-top: 80px;
-}
-
-.services {
-  background: #fff;
-}
-
-.sectionTitle {
-  font-size: 24px;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  color: var(--brand-primary);
-}
-
-.sectionLead {
-  margin-top: 12px;
-  max-width: 672px;
-  font-size: 14px;
-  line-height: 24px;
-  color: rgba(0, 0, 0, 0.7);
-}
-
-.cards2 {
-  margin-top: 40px;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-}
-
-.card {
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 16px;
-  background: #fff;
-  padding: 24px;
-}
-
-.cardTitle {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--brand-primary);
-}
-
-.cardText {
-  margin-top: 8px;
-  font-size: 14px;
-  line-height: 24px;
-  color: rgba(0, 0, 0, 0.7);
-}
-
-.advantages {
-  background: #faf8f6;
-}
-
-.cards3 {
-  margin-top: 40px;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-}
-
-.advText {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--brand-secondary-dark);
-}
-
-.about {
-  background: #fff;
-}
-
-.aboutText {
-  margin-top: 16px;
-  max-width: 768px;
-  font-size: 14px;
-  line-height: 28px;
-  color: rgba(0, 0, 0, 0.7);
 }
 
 @media (max-width: 768px) {
@@ -484,42 +675,112 @@
     font-size: 16px;
     line-height: 1.24;
   }
-  .cards2 {
+
+  .showcaseSection {
+    padding: 28px 16px 34px;
+  }
+
+  .showcaseTop {
     grid-template-columns: 1fr;
+    align-items: flex-start;
     gap: 16px;
   }
-  .card {
-    padding: 16px;
+
+  .showcaseLead {
+    max-width: 100%;
+    font-size: 27px;
   }
-  .cardTitle {
-    font-size: 16px;
+
+  .showcaseReadMore {
+    font-size: 14px;
   }
-  .cardText {
-    font-size: 12px;
-    line-height: 20px;
-  }
-  .cards3 {
+
+  .showcaseGrid {
+    margin-top: 20px;
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 18px;
   }
-  .advText {
-    font-size: 12px;
+
+  .showcaseFeatureItem {
+    font-size: 20px;
+    padding: 10px 0;
   }
-  .aboutText {
-    font-size: 12px;
-    line-height: 20px;
+
+  .showcaseFeatureHeadline {
+    font-size: 14px;
+    margin-bottom: 0;
   }
-  .aboutTextTitle {
+
+  .showcaseFeatureToggle {
+    font-size: 28px;
+    width: 22px;
+    height: 22px;
+  }
+
+  .showcaseFeatureDetailsOpen {
+    max-height: 360px;
+  }
+
+  .showcaseFeatureDetailsText {
+    margin: 10px 0 12px;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .showcaseFeatureImageWrap {
+    aspect-ratio: 16 / 10;
+  }
+
+  .sustainabilitySection {
+    padding: 50px 0;
+  }
+
+  .sustainabilityMedia {
+    min-height: 420px;
+    justify-content: center;
+    padding: 30px 26px;
+  }
+
+  .sustainabilityCard {
+    width: 100%;
+    max-width: 560px;
+    padding: 22px 18px;
+  }
+
+  .sustainabilityKicker {
+    font-size: 10px;
+  }
+
+  .sustainabilityTitle {
+    margin: 8px 0 12px;
+    font-size: 24px;
+    line-height: 1.04;
+  }
+
+  .sustainabilityText {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .contactCtaSection {
+    padding: 52px 18px 56px;
+  }
+
+  .contactCtaInner {
+    max-width: 560px;
+  }
+
+  .contactCtaTitle {
+    font-size: 24px;
+  }
+
+  .contactCtaText {
+    margin: 14px auto 20px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .contactCtaLink {
     font-size: 16px;
-  }
-  .aboutTextDescription {
-    font-size: 12px;
-    line-height: 20px;
-  }
-  .aboutTextContent {
-    padding: 0 16px;
-  }
-  .aboutTextImage {
-    height: 200px;
   }
 }

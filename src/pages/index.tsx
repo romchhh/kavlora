@@ -1,10 +1,49 @@
 import Head from "next/head";
 import Image from "next/image";
+import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import styles from "./Home.module.css";
 
 export default function Home() {
+  const showcaseTabs = [
+    {
+      label: "Фіча 1 Дизайн без обмежень",
+      headline: "From the start among the best: we perfect the Pivot system",
+      imageSrc: "/main/photo4.png",
+      imageAlt: "Pivot system detail",
+      details:
+        "Текст1 The pivot door system unlocks true design freedom, supporting finishes from around the world including heavy, statement materials. With hinges engineered to carry door leaves up to 500 kg, architects and designers can realize bold concepts without sacrificing comfort or performance. The result is a powerful architectural feature that turns the entrance into a showcase, enabling experimentation with proportions, form, and material with no compromise.",
+    },
+    {
+      label: "Фіча 2 Дизайн без обмежень",
+      headline: "Відтворення вашої ідеї з урахуванням всіх деталей",
+      imageSrc: "/main/photo5.png",
+      imageAlt: "Design concept sketch",
+      details:
+        "Текст2 The pivot door system unlocks true design freedom, supporting finishes from around the world including heavy, statement materials. With hinges engineered to carry door leaves up to 500 kg, architects and designers can realize bold concepts without sacrificing comfort or performance. The result is a powerful architectural feature that turns the entrance into a showcase, enabling experimentation with proportions, form, and material with no compromise.",
+    },
+    {
+      label: "Фіча 3 Дизайн без обмежень",
+      headline: "Tailored details that turn ideas into signature solutions",
+      imageSrc: "/main/photo6.png",
+      imageAlt: "Tailored production detail",
+      details:
+        "Текст3 The pivot door system unlocks true design freedom, supporting finishes from around the world including heavy, statement materials. With hinges engineered to carry door leaves up to 500 kg, architects and designers can realize bold concepts without sacrificing comfort or performance. The result is a powerful architectural feature that turns the entrance into a showcase, enabling experimentation with proportions, form, and material with no compromise.",
+    },
+    {
+      label: "Фіча 4 Дизайн без обмежень",
+      headline: "Engineered security and performance for everyday reliability",
+      imageSrc: "/main/photo7.png",
+      imageAlt: "Security and performance detail",
+      details:
+        "Текст4 The pivot door system unlocks true design freedom, supporting finishes from around the world including heavy, statement materials. With hinges engineered to carry door leaves up to 500 kg, architects and designers can realize bold concepts without sacrificing comfort or performance. The result is a powerful architectural feature that turns the entrance into a showcase, enabling experimentation with proportions, form, and material with no compromise.",
+    },
+  ];
+  const [activeShowcaseTab, setActiveShowcaseTab] = useState(0);
+  const [isShowcaseDetailsOpen, setIsShowcaseDetailsOpen] = useState(false);
+  const currentShowcaseItem = showcaseTabs[activeShowcaseTab];
+
   return (
     <>
       <Head>
@@ -164,54 +203,117 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="services" className={styles.services}>
-            <div className={styles.container}>
-              <h2 className={styles.sectionTitle}>Послуги</h2>
-              <p className={styles.sectionLead}>
-                Оберіть тип послуги — нижче є 4 варіанти для прикладу (можемо замінити на реальні
-                назви та описи).
-              </p>
+          <section aria-label="Wood system" className={styles.showcaseSection}>
+            <div className={styles.showcaseContainer}>
+              <div className={styles.showcaseTop}>
+                <h2 className={styles.showcaseLead}>
+                 Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                 Aperiam sit consequatur nostrum a nam, beatae ducimus enim optio 
+                 explicabo minus optio explicabo.
+                </h2>
+                <a href="/contact" className={styles.showcaseReadMore}>
+                  Детальніше
+                  <svg
+                    aria-hidden="true"
+                    className={styles.contactCtaIcon}
+                    viewBox="0 0 320 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+                  </svg>
+                </a>
+              </div>
 
-              <div className={styles.cards2}>
-                {[
-                  { id: "services-type-1", title: "ТИП 1", text: "Короткий опис послуги." },
-                  { id: "services-type-2", title: "ТИП 2", text: "Короткий опис послуги." },
-                  { id: "services-type-3", title: "ТИП 3", text: "Короткий опис послуги." },
-                  { id: "services-type-4", title: "ТИП 4", text: "Короткий опис послуги." },
-                ].map((card) => (
-                  <div key={card.id} id={card.id} className={styles.card}>
-                    <h3 className={styles.cardTitle}>{card.title}</h3>
-                    <p className={styles.cardText}>{card.text}</p>
+              <div className={styles.showcaseGrid}>
+                <div className={styles.showcaseFeatureList}>
+                  {showcaseTabs.map((tab, index) => (
+                    <button
+                      key={tab.label}
+                      type="button"
+                      className={`${styles.showcaseFeatureItem} ${
+                        index === activeShowcaseTab ? styles.showcaseFeatureItemActive : ""
+                      }`}
+                      onClick={() => setActiveShowcaseTab(index)}
+                    >
+                      {tab.label}
+                    </button>
+                  ))}
+                </div>
+
+                <div>
+                  <div className={styles.showcaseFeatureHeaderRow}>
+                    <p className={styles.showcaseFeatureHeadline}>{currentShowcaseItem.headline}</p>
+                    <button
+                      type="button"
+                      className={styles.showcaseFeatureToggle}
+                      aria-expanded={isShowcaseDetailsOpen}
+                      aria-controls="showcase-feature-details"
+                      onClick={() => setIsShowcaseDetailsOpen((prev) => !prev)}
+                    >
+                      {isShowcaseDetailsOpen ? "-" : "+"}
+                    </button>
                   </div>
-                ))}
+                  <div
+                    id="showcase-feature-details"
+                    className={`${styles.showcaseFeatureDetails} ${
+                      isShowcaseDetailsOpen ? styles.showcaseFeatureDetailsOpen : ""
+                    }`}
+                  >
+                    <p className={styles.showcaseFeatureDetailsText}>{currentShowcaseItem.details}</p>
+                  </div>
+                  <figure className={styles.showcaseFeatureImageWrap}>
+                    <Image
+                      src={currentShowcaseItem.imageSrc}
+                      alt={currentShowcaseItem.imageAlt}
+                      fill
+                      className={styles.coverImage}
+                      sizes="(max-width: 768px) 100vw, 55vw"
+                    />
+                  </figure>
+                </div>
               </div>
             </div>
           </section>
 
-          <section id="advantages" className={styles.advantages}>
-            <div className={styles.container}>
-              <h2 className={styles.sectionTitle}>Переваги</h2>
-              <div className={styles.cards3}>
-                {[
-                  "Преміальні матеріали",
-                  "Індивідуальний підхід",
-                  "Супровід від старту до монтажу",
-                ].map((t) => (
-                  <div key={t} className={styles.card}>
-                    <p className={styles.advText}>{t}</p>
-                  </div>
-                ))}
+          <section aria-label="Sustainability" className={styles.sustainabilitySection}>
+            <div className={styles.sustainabilityMedia}>
+              <video
+                className={styles.sustainabilityVideo}
+                src="/woodvideo.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
+              <div className={styles.sustainabilityCard}>
+                <p className={styles.sustainabilityKicker}>SUSTAINABILITY</p>
+                <h2 className={styles.sustainabilityTitle}>
+                Традиція дерева. Сучасна культура виробництва.
+                </h2>
+                <p className={styles.sustainabilityText}>
+                Наше підприємство – це сильна команда, великий виробничий простір і щоденна робота з натуральною сировиною. Ми будуємо процеси так, щоб поєднати надійність постачання, акуратну обробку матеріалу та стабільний результат для клієнта. Крок за кроком розширюємо можливості виробництва, щоб пропонувати ще більше готових рішень для вас.
+                </p>
               </div>
             </div>
           </section>
 
-          <section id="about" className={styles.about}>
-            <div className={styles.container}>
-              <h2 className={styles.sectionTitle}>Про нас</h2>
-              <p className={styles.aboutText}>
-                Тут буде коротка історія бренду та підхід до роботи. Секцію зробив як базовий
-                каркас — наповнимо контентом, коли буде текст.
+          <section aria-label="Book an appointment" className={styles.contactCtaSection}>
+            <div className={styles.contactCtaInner}>
+              <h2 className={styles.contactCtaTitle}>Запис на консультацію</h2>
+              <p className={styles.contactCtaText}>
+              Ми супроводжуємо вас на кожному етапі – від першої ідеї до фінального результату. Розкажіть про ваш запит, а ми запропонуємо оптимальне рішення, узгодимо деталі та забезпечимо стабільну якість виконання. Усе, щоб підсумок повністю відповідав вашим очікуванням.
               </p>
+              <a href="/contact" className={styles.contactCtaLink}>
+                Зв'яжіться з нами
+                <svg
+                  aria-hidden="true"
+                  className={styles.contactCtaIcon}
+                  viewBox="0 0 320 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+                </svg>
+              </a>
             </div>
           </section>
 
