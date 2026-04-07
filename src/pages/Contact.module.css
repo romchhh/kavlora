@@ -45,6 +45,7 @@
 .kicker {
   font-size: 12px;
   letter-spacing: 0.16em;
+  font-weight: 700;
   color: rgba(0, 0, 0, 0.75);
 }
 

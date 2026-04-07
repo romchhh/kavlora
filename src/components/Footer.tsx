@@ -63,8 +63,8 @@ export function Footer() {
             <h3 className={styles.heading}>Меню</h3>
             <a href="#">Головна</a>
             <a href="#services">Послуги</a>
-            <a href="#advantages">Переваги</a>
-            <a href="#about">Про нас</a>
+            <a href="/advantages">Переваги</a>
+            <a href="/about-us">Про нас</a>
             <a href="/contact">Контакти</a>
           </nav>
         </div>

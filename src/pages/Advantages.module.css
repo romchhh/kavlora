@@ -1,0 +1,627 @@
+.page {
+  min-height: 100vh;
+  background: #000;
+}
+
+.heroSection {
+  position: relative;
+  min-height: 86vh;
+  overflow: hidden;
+}
+
+.heroVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(5, 10, 10, 0.72),
+    rgba(5, 10, 10, 0.44),
+    rgba(5, 10, 10, 0.62)
+  );
+}
+
+.heroInner {
+  position: relative;
+  z-index: 2;
+  max-width: 1152px;
+  min-height: 86vh;
+  margin: 0 auto;
+  padding: 128px 20px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroKicker {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.heroTitle {
+  margin: 14px 0 0;
+  max-width: 14ch;
+  font-size: 62px;
+  line-height: 1;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+}
+
+.descriptionSection {
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 66px 20px 78px;
+}
+
+.descriptionText {
+  margin: 0;
+  max-width: 780px;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.4;
+  color: #111;
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity 1600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1600ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.descriptionSectionInView .descriptionText {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cardsSection {
+  background: #fff;
+  padding: 0 0px 84px;
+}
+
+.cardsGrid {
+  max-width: 1400px;
+  padding: 0 20px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 38px 14px;
+}
+
+.card {
+  display: grid;
+  gap: 14px;
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity 1600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1600ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.cardsSectionInView .card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cardsSectionInView .card:nth-child(1) {
+  transition-delay: 100ms;
+}
+
+.cardsSectionInView .card:nth-child(2) {
+  transition-delay: 240ms;
+}
+
+.cardsSectionInView .card:nth-child(3) {
+  transition-delay: 380ms;
+}
+
+.cardsSectionInView .card:nth-child(4) {
+  transition-delay: 520ms;
+}
+
+.cardsSectionInView .card:nth-child(5) {
+  transition-delay: 660ms;
+}
+
+.cardsSectionInView .card:nth-child(6) {
+  transition-delay: 800ms;
+}
+
+.cardImageWrap {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  aspect-ratio: 5 / 4;
+  overflow: hidden;
+}
+
+.cardImage {
+  object-fit: cover;
+  transition: transform 320ms ease;
+  transform-origin: center;
+}
+.card:hover .cardImage {
+  transform: scale(1.1);
+}
+.cardTitle {
+  margin: 0;
+  font-size: 23px;
+  line-height: 1.1;
+  font-weight: 500;
+  color: #111;
+}
+
+.cardText {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.45;
+  color: rgba(0, 0, 0, 0.56);
+}
+
+.awardsIntroSection {
+  background: var(--brand-accent-light);
+  padding: 40px 0px;
+}
+
+.awardsIntroInner {
+  max-width: 1400px;
+  padding: 0 20px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.7fr auto;
+  align-items: center;
+  gap: 40px;
+}
+
+.awardsIntroContent {
+  max-width: 760px;
+  text-align: left;
+  justify-self: start;
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity 1600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1600ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.awardsIntroKicker {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.78);
+}
+
+.awardsIntroTitle {
+  margin: 14px 0 16px;
+  font-size: 47px;
+  line-height: 1;
+  font-weight: 500;
+  color: #111;
+}
+
+.awardsIntroText {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.45;
+  color: rgba(0, 0, 0, 0.56);
+}
+
+.awardsIntroLogo {
+  margin-top: 0;
+  width: 162px;
+  height: auto;
+  justify-self: center;
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity 1600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1600ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.awardsIntroSectionInView .awardsIntroContent,
+.awardsIntroSectionInView .awardsIntroLogo {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.awardsIntroSectionInView .awardsIntroContent {
+  transition-delay: 120ms;
+}
+
+.awardsIntroSectionInView .awardsIntroLogo {
+  transition-delay: 320ms;
+}
+
+.precisionSection {
+  background: #fff;
+  padding: 56px 0 20px;
+}
+
+.precisionInner {
+  padding: 0 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.precisionKicker {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.72);
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity 1600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1600ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.precisionTitle {
+  margin: 14px 0 18px;
+  font-size: 47px;
+  line-height: 1;
+  font-weight: 500;
+  color: #111;
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity 1600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1600ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.precisionText {
+  margin: 0 auto;
+  max-width: 780px;
+  font-size: 16px;
+  line-height: 1.45;
+  color: rgba(0, 0, 0, 0.56);
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity 1600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1600ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.precisionSectionInView .precisionKicker,
+.precisionSectionInView .precisionTitle,
+.precisionSectionInView .precisionText {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.precisionSectionInView .precisionKicker {
+  transition-delay: 90ms;
+}
+
+.precisionSectionInView .precisionTitle {
+  transition-delay: 250ms;
+}
+
+.precisionSectionInView .precisionText {
+  transition-delay: 420ms;
+}
+
+.videoGallerySection {
+  background: #fff;
+  padding: 10px 20px 84px;
+}
+
+.videoGalleryInner {
+  max-width: 1152px;
+  margin: 0 auto;
+}
+
+.videoHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity 1600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1600ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.videoGalleryTitle {
+  margin: 0;
+  font-size: 40px;
+  line-height: 1.05;
+  font-weight: 500;
+  color: #111;
+}
+
+.videoNav {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.videoNavBtn {
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(32, 45, 37, 0.26);
+  border-radius: 999px;
+  background: linear-gradient(145deg, #ffffff, #f6efe9);
+  color: var(--brand-primary);
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(32, 45, 37, 0.12);
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    background-color 220ms ease,
+    color 220ms ease,
+    box-shadow 220ms ease,
+    opacity 180ms ease;
+}
+
+.videoNavIcon {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+  display: block;
+  align-self: center;
+  justify-self: center;
+}
+
+.videoNavIconLeft {
+  transform: rotate(180deg);
+}
+
+.videoNavBtn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  border-color: var(--brand-accent);
+  background: var(--brand-accent);
+  color: #1d130e;
+  box-shadow: 0 10px 24px rgba(225, 168, 131, 0.42);
+}
+
+.videoNavBtn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(32, 45, 37, 0.18);
+}
+
+.videoNavBtn:focus-visible {
+  outline: none;
+  border-color: var(--brand-accent);
+  box-shadow:
+    0 0 0 3px rgba(225, 168, 131, 0.35),
+    0 8px 20px rgba(32, 45, 37, 0.14);
+}
+
+.videoNavBtn:disabled {
+  opacity: 0.46;
+  border-color: rgba(32, 45, 37, 0.14);
+  background: #f8f7f5;
+  color: rgba(32, 45, 37, 0.42);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.videoGrid {
+  margin-top: 20px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(320px, 420px);
+  gap: 14px;
+  justify-content: start;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.videoGrid::-webkit-scrollbar {
+  display: none;
+}
+
+.videoCard {
+  margin: 0;
+  aspect-ratio: 9 / 16;
+  width: 100%;
+  overflow: hidden;
+  background: #000;
+  scroll-snap-align: start;
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity 1600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1600ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.videoGallerySectionInView .videoHeader,
+.videoGallerySectionInView .videoCard {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.videoGallerySectionInView .videoHeader {
+  transition-delay: 100ms;
+}
+
+.videoGallerySectionInView .videoCard:nth-child(1) {
+  transition-delay: 260ms;
+}
+
+.videoGallerySectionInView .videoCard:nth-child(2) {
+  transition-delay: 420ms;
+}
+
+.videoGallerySectionInView .videoCard:nth-child(3) {
+  transition-delay: 580ms;
+}
+
+.videoGallerySectionInView .videoCard:nth-child(4) {
+  transition-delay: 740ms;
+}
+
+.videoPlayer {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background: #000;
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    min-height: 32vh;
+  }
+
+  .heroInner {
+    min-height: 62vh;
+    padding: 62px 16px 32px;
+  }
+
+  .heroKicker {
+    font-size: 15px;
+    letter-spacing: 0.14em;
+  }
+
+  .heroTitle {
+    margin-top: 10px;
+    max-width: 12ch;
+    font-size: 38px;
+    line-height: 0.98;
+  }
+
+  .descriptionSection {
+    padding: 38px 20px 44px;
+  }
+
+  .descriptionText {
+    font-size: 16px;
+    line-height: 1.35;
+  }
+
+  .cardsSection {
+    padding: 0 0px 48px;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .cardTitle {
+    font-size: 19px;
+  }
+
+  .cardText {
+    font-size: 15px;
+  }
+
+  .awardsIntroSection {
+    padding: 16px 0 42px;
+  }
+
+  .awardsIntroInner {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .awardsIntroContent {
+    max-width: 100%;
+  }
+
+  .awardsIntroKicker {
+    font-size: 13px;
+  }
+
+  .awardsIntroTitle {
+    margin: 10px 0 12px;
+    font-size: 31px;
+  }
+
+  .awardsIntroText {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .awardsIntroLogo {
+    width: 98px;
+    margin-top: 0;
+    justify-self: center;
+  }
+
+  .precisionSection {
+    padding: 34px 0 48px;
+  }
+
+  .precisionKicker {
+    font-size: 13px;
+  }
+
+  .precisionTitle {
+    margin: 10px 0 12px;
+    font-size: 31px;
+    line-height: 1.03;
+  }
+
+  .precisionText {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .videoGallerySection {
+    padding: 8px 20px 52px;
+  }
+
+  .videoHeader {
+    align-items: flex-end;
+    gap: 10px;
+  }
+
+  .videoGalleryTitle {
+    font-size: 32px;
+  }
+
+  .videoNavBtn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .videoNavIcon {
+    width: 12px;
+    height: 12px;
+  }
+
+  .videoGrid {
+    grid-auto-columns: minmax(280px, 340px);
+    gap: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .descriptionText,
+  .card,
+  .awardsIntroContent,
+  .awardsIntroLogo,
+  .precisionKicker,
+  .precisionTitle,
+  .precisionText,
+  .videoHeader,
+  .videoCard {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}

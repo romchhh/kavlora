@@ -250,10 +250,19 @@ export default function Home() {
                 </div>
 
                 <div className={styles.heroDescWrap}>
-                  <p className={styles.heroDesc}>
-                    Ламелі від 2 мм, класи A/B/C/D. Заготовки для паркетної дошки за розмірами
-                    вашого замовлення.
-                  </p>
+                  <div className={styles.heroDescCols}>
+                    <p className={styles.heroDesc}>
+                      Ламелі від 2 мм, класи A/B/C/D. Заготовки для паркетної дошки за розмірами
+                      вашого замовлення.
+                    </p>
+                    <Image
+                      src="/FSC_logo_white.svg"
+                      alt="FSC logo"
+                      width={74}
+                      height={78}
+                      className={styles.heroFscLogo}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -357,17 +366,21 @@ export default function Home() {
               }`}
             >
               <div className={styles.quote}>
-                <div className={styles.personCard}>
-                  <div className={styles.personAvatar}>
-                    <Image
-                      src="/avatar.png"
-                      alt="Андрій Гайіб"
-                      width={56}
-                      height={56}
-                      priority
-                    />
-                  </div>
-                  <p className={styles.personName}>Засновник</p>
+                <div className={styles.quoteLogos}>
+                  <Image
+                    src="/logo2_vertical.png"
+                    alt="Kavlora logo"
+                    width={132}
+                    height={160}
+                    className={styles.quoteLogoPrimary}
+                  />
+                  <Image
+                    src="/FSC_logo.svg"
+                    alt="FSC logo"
+                    width={92}
+                    height={96}
+                    className={styles.quoteLogoSecondary}
+                  />
                 </div>
 
                 <p className={styles.quoteText}>

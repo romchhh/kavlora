@@ -122,6 +122,19 @@
   color: rgba(255, 255, 255, 0.85);
 }
 
+.heroDescCols {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 18px;
+}
+
+.heroFscLogo {
+  width: 74px;
+  height: auto;
+  opacity: 0.95;
+}
+
 .productSection {
   background: var(--brand-white);
 }
@@ -256,7 +269,7 @@
   padding: 44px 0;
 }
 
-.statsQuoteContainer .personCard,
+.statsQuoteContainer .quoteLogos,
 .statsQuoteContainer .quoteText {
   opacity: 0;
   transform: translateY(28px);
@@ -265,13 +278,13 @@
   will-change: transform, opacity;
 }
 
-.statsQuoteContainerInView .personCard,
+.statsQuoteContainerInView .quoteLogos,
 .statsQuoteContainerInView .quoteText {
   opacity: 1;
   transform: translateY(0);
 }
 
-.statsQuoteContainerInView .personCard {
+.statsQuoteContainerInView .quoteLogos {
   transition-delay: 420ms;
 }
 
@@ -286,34 +299,24 @@
   padding: 0 44px;
 }
 
-.personCard {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
+.quoteLogos {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-content: center;
+  column-gap: 16px;
 }
 
-.personAvatar {
-  width: 56px;
-  height: 56px;
-  border-radius: 999px;
-  overflow: hidden;
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+.quoteLogoPrimary {
+  width: 132px;
+  height: auto;
+  opacity: 0.95;
 }
 
-.personName {
-  margin: 0;
-  font-size: 18px;
-  font-weight: 600;
-  color: #000;
-}
-
-.personRole {
-  margin: 0;
-  font-size: 14px;
-  font-weight: 400;
-  color: rgba(0, 0, 0, 0.55);
+.quoteLogoSecondary {
+  width: 92px;
+  height: auto;
+  opacity: 0.95;
 }
 
 .quoteText {
@@ -726,6 +729,14 @@
     line-height: 1.3;
   }
 
+  .heroDescCols {
+    gap: 10px;
+  }
+
+  .heroFscLogo {
+    width: 66px;
+  }
+
   .container {
     padding: 32px 20px 36px;
   }
@@ -799,16 +810,19 @@
     padding: 0;
   }
 
-  .personCard {
-    gap: 8px;
+
+  .quoteLogos {
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    gap: 12px;
   }
 
-  .personName {
-    font-size: 16px;
+  .quoteLogoPrimary {
+    width: 98px;
   }
 
-  .personRole {
-    font-size: 12px;
+  .quoteLogoSecondary {
+    width: 72px;
   }
 
   .quoteText {
@@ -964,7 +978,7 @@
   .productKicker,
   .productLead,
   .staggerPhoto,
-  .statsQuoteContainer .personCard,
+  .statsQuoteContainer .quoteLogos,
   .statsQuoteContainer .quoteText,
   .showcaseTop,
   .showcaseFeatureList,

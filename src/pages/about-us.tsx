@@ -200,42 +200,28 @@ export default function AboutUsPage() {
         <section ref={impactSectionRef} aria-label="Impact in numbers" className={styles.impactSection}>
           <div className={styles.impactGrid}>
             <div className={styles.impactIntro}>
-              <h2 className={styles.impactTitle}>Наш вплив у цифрах</h2>
+              <h2 className={styles.impactTitle}>Наш досвід і можливості</h2>
               <p className={styles.impactLead}>
-                Кілька цифр, що відображають нашу зосередженість на якості, точності та
-                довгострокових партнерських відносинах.
+              Поєднуємо перевірений часом досвід, стабільне виробництво та міжнародну логістику для надійної співпраці.
               </p>
             </div>
 
             <div className={styles.impactMetric}>
-              <p className={styles.impactValue}>{renderRollingNumber("90%")}</p>
-              <p className={styles.impactLabel}>Повторні співпраці</p>
+              <p className={styles.impactValue}>{renderRollingNumber("15+")}</p>
+              <p className={styles.impactLabel}>років на ринку</p>
             </div>
 
             <div className={styles.impactMetric}>
-              <p className={styles.impactValue}>{renderRollingNumber("35+")}</p>
-              <p className={styles.impactLabel}>Проекти</p>
+              <Image
+                src="/air_shipping.gif"
+                alt="Air shipping"
+                width={140}
+                height={92}
+                className={styles.impactGif}
+              />
+              <p className={styles.impactLabel}>Доставка по всьому світу</p>
             </div>
 
-            <div className={styles.impactMetric}>
-              <p className={styles.impactValue}>{renderRollingNumber("10")}</p>
-              <p className={styles.impactLabel}>Роки на ринку</p>
-            </div>
-
-            <div className={styles.impactMetric}>
-              <p className={styles.impactValue}>{renderRollingNumber("650+")}</p>
-              <p className={styles.impactLabel}>Виготовлення ламелей </p>
-            </div>
-
-            <div className={styles.impactMetric}>
-              <p className={styles.impactValue}>{renderRollingNumber("500+")}</p>
-              <p className={styles.impactLabel}>Виготовлення</p>
-            </div>
-
-            <div className={styles.impactMetric}>
-              <p className={styles.impactValue}>{renderRollingNumber("450+")}</p>
-              <p className={styles.impactLabel}>Деталі оздоблення</p>
-            </div>
           </div>
         </section>
 

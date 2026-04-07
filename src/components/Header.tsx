@@ -126,7 +126,7 @@ export function Header({ services = DEFAULT_SERVICES, forceDark = false }: Heade
             </div>
           </div>
 
-          <a className={styles.navLink} href="#advantages">
+          <a className={styles.navLink} href="/advantages">
             Переваги
           </a>
           <a className={styles.navLink} href="/about-us">
@@ -221,7 +221,7 @@ export function Header({ services = DEFAULT_SERVICES, forceDark = false }: Heade
 
               <a
                 className={styles.mobileLink}
-                href="#advantages"
+                href="/advantages"
                 onClick={() => {
                   setMobileOpen(false);
                   setMobileServicesOpen(false);

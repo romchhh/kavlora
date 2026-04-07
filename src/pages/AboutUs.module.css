@@ -147,18 +147,18 @@
 }
 
 .impactMetric {
-  align-self: end;
+  align-self: center;
 }
 
 .impactValue {
-  margin: 0;
+  margin-bottom: 15px;
+  
   font-size: 82px;
   line-height: 0.92;
   font-weight: 600;
   color: #111;
-  align-self: start;
+  align-self: center;
   display: inline-flex;
-  align-items: baseline;
   white-space: nowrap;
 }
 
@@ -193,11 +193,17 @@
 }
 
 .impactLabel {
-  margin: 10px 0 0;
-  font-size: 19px;
+  margin: 0;
+  font-size: 22px;
   line-height: 1.22;
   color: #111;
   align-self: end;
+}
+
+.impactGif {
+  width: 120px;
+  height: auto;
+  display: block;
 }
 
 .solutionsSection {
@@ -338,7 +344,7 @@
 
   .impactGrid {
     grid-template-columns: 1fr 1fr;
-    gap: 22px 16px;
+    gap: 22px 7px;
   }
 
   .impactIntro {
@@ -361,9 +367,12 @@
   }
 
   .impactLabel {
-    margin-top: 6px;
     font-size: 14px;
     line-height: 1.3;
+  }
+
+  .impactGif {
+    width: 66px;
   }
 
   .solutionsSection {
