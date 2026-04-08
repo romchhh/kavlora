@@ -105,6 +105,9 @@ export type AppDictionary = {
     detailsPlaceholder: string;
     agreementLabel: string;
     submit: string;
+    submitSending: string;
+    submitSuccess: string;
+    submitError: string;
   };
   services: {
     seoTitle: string;
@@ -390,6 +393,9 @@ export const DICTIONARIES: Record<LocaleCode, AppDictionary> = {
       detailsPlaceholder: "Напишіть детальніше про ваш запит",
       agreementLabel: "Я погоджуюся з тим, що мої введені дані збираються та зберігаються.",
       submit: "Відправити",
+      submitSending: "Відправлення…",
+      submitSuccess: "Дякуємо! Ми отримали ваш запит і зв’яжемося з вами найближчим часом.",
+      submitError: "Не вдалося відправити. Спробуйте ще раз або напишіть нам на пошту.",
     },
     services: {
       seoTitle: "Послуги | Kavlora",
@@ -730,6 +736,9 @@ export const DICTIONARIES: Record<LocaleCode, AppDictionary> = {
       detailsPlaceholder: "Please describe your request",
       agreementLabel: "I agree that my entered data can be collected and stored.",
       submit: "Submit",
+      submitSending: "Sending…",
+      submitSuccess: "Thank you! We received your request and will get back to you soon.",
+      submitError: "Could not send. Please try again or email us directly.",
     },
     services: {
       seoTitle: "Services | Kavlora",
@@ -1057,6 +1066,9 @@ export const DICTIONARIES: Record<LocaleCode, AppDictionary> = {
       detailsPlaceholder: "请描述您的需求",
       agreementLabel: "我同意所填写的数据被收集与存储。",
       submit: "提交",
+      submitSending: "发送中…",
+      submitSuccess: "谢谢！我们已收到您的信息，将尽快与您联系。",
+      submitError: "发送失败，请重试或直接发邮件联系我们。",
     },
     services: {
       seoTitle: "服务 | Kavlora",

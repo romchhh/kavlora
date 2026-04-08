@@ -170,6 +170,32 @@
   cursor: not-allowed;
 }
 
+.formStatus {
+  margin-top: 12px;
+  font-size: 16px;
+  line-height: 1.45;
+  color: #2d6a4f;
+  font-weight: 500;
+  border: 1px solid #2d6a4f;
+  border-radius: 10px;
+  padding: 15px 20px;
+  text-align: center;
+  background: #67948029;
+}
+
+.formStatusError {
+  color: #9d0208;
+  margin-top: 12px;
+  font-size: 16px;
+  line-height: 1.45;
+  font-weight: 500;
+  border: 1px solid #9d0208;
+  border-radius: 10px;
+  padding: 15px 20px;
+  text-align: center;
+  background: #f5b3b629;
+}
+
 @media (max-width: 768px) {
   .overlay {
     padding: 12px;

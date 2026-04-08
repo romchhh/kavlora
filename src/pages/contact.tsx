@@ -1,9 +1,12 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { type FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import styles from "./Contact.module.css";
 import { Seo } from "@/components/Seo";
 import { useI18n } from "@/hooks/useI18n";
+import { sendContactForm } from "@/lib/sendContactForm";
+
+type InterestKey = "lamels" | "cuttings" | "other";
 
 export default function ContactPage() {
   const { dict } = useI18n();
@@ -11,13 +14,71 @@ export default function ContactPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+  const [interests, setInterests] = useState<Record<InterestKey, boolean>>({
+    lamels: false,
+    cuttings: false,
+    other: false,
+  });
   const [agreed, setAgreed] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  const [feedback, setFeedback] = useState<
+    { kind: "success"; text: string } | { kind: "error"; text: string } | null
+  >(null);
   const [isContactInView, setIsContactInView] = useState(false);
   const contactSectionRef = useRef<HTMLElement | null>(null);
 
   const canSubmit = useMemo(() => {
-    return name.trim().length > 0 && email.trim().length > 0 && phone.trim().length > 0 && agreed;
-  }, [agreed, email, name, phone]);
+    return (
+      name.trim().length > 0 &&
+      email.trim().length > 0 &&
+      phone.trim().length > 0 &&
+      agreed &&
+      !isSending
+    );
+  }, [agreed, email, isSending, name, phone]);
+
+  const toggleInterest = (key: InterestKey) => {
+    setInterests((prev) => ({ ...prev, [key]: !prev[key] }));
+  };
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (!canSubmit) return;
+
+    setFeedback(null);
+    setIsSending(true);
+
+    const interestKeys = (
+      Object.entries(interests) as [InterestKey, boolean][]
+    )
+      .filter(([, on]) => on)
+      .map(([k]) => k);
+
+    const result = await sendContactForm({
+      formSource: "contact",
+      fullName: name.trim(),
+      email: email.trim(),
+      phone: phone.trim(),
+      interests: interestKeys,
+      message: message.trim(),
+    });
+
+    setIsSending(false);
+
+    if (result.ok) {
+      setName("");
+      setEmail("");
+      setPhone("");
+      setMessage("");
+      setInterests({ lamels: false, cuttings: false, other: false });
+      setAgreed(false);
+      setFeedback({ kind: "success", text: t.submitSuccess });
+      return;
+    }
+
+    setFeedback({ kind: "error", text: t.submitError });
+  };
 
   useEffect(() => {
     const section = contactSectionRef.current;
@@ -77,7 +138,7 @@ export default function ContactPage() {
               </ul>
             </div>
 
-            <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
+            <form className={styles.form} onSubmit={handleSubmit}>
               <div className={styles.gridTwo}>
                 <label className={styles.field}>
                   <span>
@@ -90,6 +151,7 @@ export default function ContactPage() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     required
+                    autoComplete="name"
                   />
                 </label>
 
@@ -104,6 +166,7 @@ export default function ContactPage() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
+                    autoComplete="email"
                   />
                 </label>
               </div>
@@ -119,25 +182,53 @@ export default function ContactPage() {
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   required
+                  autoComplete="tel"
                 />
               </label>
 
               <fieldset className={styles.interest}>
                 <legend>{t.interestsLegend}</legend>
                 <label>
-                  <input type="checkbox" name="interest" value="lamels" /> {t.interestLamels}
+                  <input
+                    type="checkbox"
+                    name="interest"
+                    value="lamels"
+                    checked={interests.lamels}
+                    onChange={() => toggleInterest("lamels")}
+                  />{" "}
+                  {t.interestLamels}
                 </label>
                 <label>
-                  <input type="checkbox" name="interest" value="cuttings" /> {t.interestCuttings}
+                  <input
+                    type="checkbox"
+                    name="interest"
+                    value="cuttings"
+                    checked={interests.cuttings}
+                    onChange={() => toggleInterest("cuttings")}
+                  />{" "}
+                  {t.interestCuttings}
                 </label>
                 <label>
-                  <input type="checkbox" name="interest" value="other" /> {t.interestOther}
+                  <input
+                    type="checkbox"
+                    name="interest"
+                    value="other"
+                    checked={interests.other}
+                    onChange={() => toggleInterest("other")}
+                  />{" "}
+                  {t.interestOther}
                 </label>
               </fieldset>
 
               <label className={styles.field}>
                 <span>{t.detailsLabel}</span>
-                <textarea name="message" rows={6} placeholder={t.detailsPlaceholder} />
+                <textarea
+                  name="message"
+                  rows={6}
+                  placeholder={t.detailsPlaceholder}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                />
               </label>
 
               <label className={styles.agree}>
@@ -146,8 +237,21 @@ export default function ContactPage() {
               </label>
 
               <button type="submit" className={styles.submit} disabled={!canSubmit}>
-                {t.submit}
+                {isSending ? t.submitSending : t.submit}
               </button>
+
+              {feedback ? (
+                <p
+                  role="status"
+                  className={
+                    feedback.kind === "error"
+                      ? `${styles.formStatus} ${styles.formStatusError}`
+                      : styles.formStatus
+                  }
+                >
+                  {feedback.text}
+                </p>
+              ) : null}
             </form>
           </section>
         </main>
