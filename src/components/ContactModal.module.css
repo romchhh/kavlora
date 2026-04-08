@@ -69,6 +69,8 @@
 .form {
   display: grid;
   gap: 14px;
+  /* Уникаємо «блідих» полів у Safari / iOS у темній темі ОС */
+  color-scheme: light;
 }
 
 .gridTwo {
@@ -99,9 +101,26 @@
   border: 1px solid rgba(0, 0, 0, 0.18);
   border-radius: 10px;
   padding: 10px 12px;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.4;
+  font-family: inherit;
   background: #fff;
+  color: #141414;
+  -webkit-text-fill-color: #141414;
+  caret-color: #141414;
+}
+
+/* Safari / iOS: плейсхолдери без opacity:1 виглядають майже невидимими */
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #4a4a4a;
+  opacity: 1;
+}
+
+.field input::-webkit-input-placeholder,
+.field textarea::-webkit-input-placeholder {
+  color: #4a4a4a;
+  opacity: 1;
 }
 
 .field textarea {
@@ -113,6 +132,13 @@
   outline: none;
   border-color: #d7a683;
   box-shadow: 0 0 0 3px rgba(215, 166, 131, 0.18);
+}
+
+.field input:-webkit-autofill,
+.field input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #fff inset;
+  -webkit-text-fill-color: #141414;
+  caret-color: #141414;
 }
 
 .interest {

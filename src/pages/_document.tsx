@@ -20,7 +20,10 @@ export default class AppDocument extends Document<Props> {
   render() {
     return (
       <Html lang={this.props.locale ?? "uk"}>
-        <Head />
+        <Head>
+          <link rel="icon" href="/sign.png" type="image/png" sizes="any" />
+          <link rel="apple-touch-icon" href="/sign.png" />
+        </Head>
         <body className="antialiased">
           <Main />
           <NextScript />
