@@ -1,0 +1,458 @@
+.page {
+  background: #fff;
+}
+
+.main {
+  background: #fff;
+}
+
+.introSection {
+  padding: 120px 0px 44px;
+}
+
+.introInner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.introGrid {
+  gap: 36px;
+  align-items: start;
+}
+
+.introKicker {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity 1600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1600ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.introTitle {
+  margin: 0;
+  max-width: 34ch;
+  font-size: 35px;
+  line-height: 1.08;
+  font-weight: 600;
+  color: #111;
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity 1600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1600ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.introTitleMuted {
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.introTitleStrong {
+  font-weight: 700;
+  color: #111;
+}
+
+.introRight {
+  max-width: 630px;
+  justify-self: end;
+  color: rgba(0, 0, 0, 0.42);
+  font-size: 18px;
+  line-height: 1.75;
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity 1600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1600ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+.introRight strong {
+  color: #111;
+  font-weight: 500;
+}
+.introSectionInView .introKicker,
+.introSectionInView .introTitle,
+.introSectionInView .introRight {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.introSectionInView .introKicker {
+  transition-delay: 90ms;
+}
+
+.introSectionInView .introTitle {
+  transition-delay: 240ms;
+}
+
+.introSectionInView .introRight {
+  transition-delay: 420ms;
+}
+
+.introRight p {
+  margin: 0;
+}
+
+.gallery {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px 64px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.galleryFigure {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.06);
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity 1600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1600ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.galleryInView .galleryFigure {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.galleryInView .galleryFigure:nth-child(1) {
+  transition-delay: 100ms;
+}
+
+.galleryInView .galleryFigure:nth-child(2) {
+  transition-delay: 280ms;
+}
+
+.galleryInView .galleryFigure:nth-child(3) {
+  transition-delay: 460ms;
+}
+
+.galleryImg {
+  object-fit: cover;
+}
+
+.pointsSection {
+  padding: 0 0 40px;
+  background: #fff;
+}
+
+.pointsInner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.pointsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 34px;
+}
+
+.point {
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity 1600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1600ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.pointsSectionInView .point {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pointsSectionInView .point:nth-child(1) {
+  transition-delay: 120ms;
+}
+
+.pointsSectionInView .point:nth-child(2) {
+  transition-delay: 320ms;
+}
+
+.pointsSectionInView .point:nth-child(3) {
+  transition-delay: 520ms;
+}
+
+.pointIndex {
+  margin: 0;
+  font-size: 23px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.62);
+}
+
+.pointLine {
+  height: 2px;
+  background: rgba(0, 0, 0, 0.08);
+  width: 100%;
+  margin-bottom: 16px;
+  margin: 30px 0;
+}
+
+.pointTitle {
+  margin: 0;
+  font-size: 23px;
+  line-height: 1.15;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.pointText {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.65;
+  color: rgba(0, 0, 0, 0.46);
+  max-width: 42ch;
+}
+
+.nextStepSection {
+  padding: 45px 0 55px;
+  background: #fff;
+}
+
+.nextStepInner {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.nextStepKicker {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity 1600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1600ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.nextStepTitle {
+  margin: 16px 0 14px;
+  font-size: 40px;
+  line-height: 1.05;
+  font-weight: 600;
+  color: #111;
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity 1600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1600ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.nextStepText {
+  margin: 0 auto;
+  max-width: 70ch;
+  font-size: 18px;
+  line-height: 1.65;
+  color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity 1600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1600ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.nextStepCta {
+  margin-top: 60px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  padding: 0 100px;
+  border-radius: 999px;
+  border: 1px solid rgba(32, 45, 37, 0.26);
+  background: linear-gradient(145deg, #ffffff, #f6efe9);
+  color: var(--brand-primary);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(32, 45, 37, 0.12);
+  opacity: 0;
+  transform: translateY(34px);
+  transition:
+    opacity 1600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 220ms ease,
+    border-color 220ms ease,
+    background-color 220ms ease,
+    color 220ms ease,
+    box-shadow 220ms ease,
+    opacity 180ms ease;
+  will-change: transform, opacity;
+}
+
+.nextStepSectionInView .nextStepKicker,
+.nextStepSectionInView .nextStepTitle,
+.nextStepSectionInView .nextStepText,
+.nextStepSectionInView .nextStepCta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nextStepSectionInView .nextStepKicker {
+  transition-delay: 100ms;
+}
+
+.nextStepSectionInView .nextStepTitle {
+  transition-delay: 260ms;
+}
+
+.nextStepSectionInView .nextStepText {
+  transition-delay: 420ms;
+}
+
+.nextStepSectionInView .nextStepCta {
+  transition-delay: 580ms;
+}
+
+.nextStepCta:hover {
+  transform: translateY(-2px);
+  border-color: var(--brand-accent);
+  background: var(--brand-accent);
+  color: #1d130e;
+  box-shadow: 0 12px 28px rgba(225, 168, 131, 0.42);
+}
+
+.nextStepCta:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 16px rgba(32, 45, 37, 0.18);
+}
+
+.nextStepCta:focus-visible {
+  outline: none;
+  border-color: var(--brand-accent);
+  box-shadow:
+    0 0 0 3px rgba(225, 168, 131, 0.35),
+    0 10px 24px rgba(32, 45, 37, 0.14);
+}
+
+@media (max-width: 768px) {
+  .introSection {
+    padding: 96px 0px 32px;
+  }
+
+  .introGrid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .introKicker {
+    font-size: 13px;
+  }
+
+  .introTitle {
+    max-width: 26ch;
+    font-size: 26px;
+  }
+
+  .introRight {
+    margin-top: 24px;
+    max-width: none;
+    justify-self: start;
+    font-size: 16px;
+  }
+
+  .gallery {
+    padding: 0 16px 48px;
+    grid-template-columns: 1fr;
+  }
+
+  .pointsSection {
+    padding: 0;
+  }
+
+  .pointsInner {
+    padding: 0 16px;
+  }
+
+  .pointsGrid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    padding-top: 22px;
+  }
+
+  .pointIndex {
+    font-size: 18px;
+  }
+
+  .pointLine {
+    margin: 10px 0;
+  }
+
+  .pointText {
+    max-width: none;
+    font-size: 14px;
+  }
+
+  .pointTitle {
+    min-height: 0;
+  }
+
+  .nextStepSection {
+    padding: 60px 0 40px;
+  }
+
+  .nextStepInner {
+    padding: 0 16px;
+  }
+
+  .nextStepKicker {
+    font-size: 13px;
+  }
+
+  .nextStepTitle {
+    font-size: 30px;
+    line-height: 1.08;
+  }
+
+  .nextStepText {
+    margin: 0;
+    font-size: 16px;
+    max-width: none;
+  }
+
+  .nextStepCta {
+    margin-top: 40px;
+    height: 50px;
+    padding: 0 80px;
+    font-size: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .introKicker,
+  .introTitle,
+  .introRight,
+  .galleryFigure,
+  .point,
+  .nextStepKicker,
+  .nextStepTitle,
+  .nextStepText,
+  .nextStepCta {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+

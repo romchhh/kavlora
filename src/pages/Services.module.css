@@ -1,0 +1,304 @@
+.page {
+  min-height: 100vh;
+  background: #000;
+}
+
+.heroSection {
+  position: relative;
+  min-height: 86vh;
+  overflow: hidden;
+}
+
+.heroVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(5, 10, 10, 0.72),
+    rgba(5, 10, 10, 0.44),
+    rgba(5, 10, 10, 0.62)
+  );
+}
+
+.heroInner {
+  position: relative;
+  z-index: 2;
+  max-width: 1152px;
+  min-height: 86vh;
+  margin: 0 auto;
+  padding: 128px 20px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroKicker {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.heroTitle {
+  margin: 14px 0 0;
+  max-width: 14ch;
+  font-size: 62px;
+  line-height: 1;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+}
+
+.collectionsSection {
+  background: #fff;
+  padding: 92px 20px 96px;
+}
+
+.collectionsInner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.collectionsKicker,
+.collectionsTitle,
+.cardsStack {
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity 1600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1600ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.collectionsInnerInView .collectionsKicker,
+.collectionsInnerInView .collectionsTitle,
+.collectionsInnerInView .cardsStack {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.collectionsInnerInView .collectionsKicker {
+  transition-delay: 90ms;
+}
+
+.collectionsInnerInView .collectionsTitle {
+  transition-delay: 240ms;
+}
+
+.collectionsInnerInView .cardsStack {
+  transition-delay: 380ms;
+}
+
+.collectionsKicker {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.55);
+  text-align: center;
+}
+
+.collectionsTitle {
+  margin: 14px 0 36px;
+  font-size: 47px;
+  line-height: 1.05;
+  font-weight: 500;
+  color: #111;
+  text-align: center;
+}
+
+.cardsStack {
+  --stack-progress: 0;
+  position: relative;
+  height: 190vh;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.cardsStackItem {
+  position: sticky;
+  top: 108px;
+}
+
+.collectionCard {
+  margin-top: 18px;
+  background: #f7f3ea;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  padding: 56px 56px;
+  display: grid;
+  grid-template-columns: 1.05fr 1.2fr;
+  gap: 44px;
+  transform-origin: 40px 40px;
+}
+
+.collectionCardAlt {
+  background: #f6f2e8;
+}
+
+.collectionCardOne {
+  z-index: 1;
+  transform: scale(calc(1 - (var(--stack-progress) * 0.06)));
+  filter: saturate(calc(1 - (var(--stack-progress) * 0.12)));
+  transition: transform 40ms linear, filter 40ms linear;
+}
+
+.collectionCardTwo {
+  z-index: 2;
+  margin-top: 38vh;
+  transform: translateY(calc((1 - var(--stack-progress)) * 150px));
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.14);
+  transition: transform 40ms linear;
+}
+
+.collectionMeta {
+  max-width: 520px;
+}
+
+.collectionIndex {
+  margin: 0;
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.collectionHeading {
+  margin: 18px 0 14px;
+  font-size: 35px;
+  line-height: 1.12;
+  font-weight: 600;
+  color: #111;
+}
+
+.collectionText {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.collectionReadMore {
+  margin-top: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  color: #1f1f1f;
+  text-decoration: none;
+}
+
+.collectionReadMore:hover {
+  opacity: 0.7;
+}
+
+.collectionReadMoreIcon {
+  width: 14px;
+  height: 14px;
+  align-self: end;
+}
+
+.collectionImageWrap {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.06);
+  align-self: center;
+}
+
+.collectionImage {
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    min-height: 74vh;
+  }
+
+  .heroInner {
+    min-height: 74vh;
+    padding: 140px 16px 56px;
+  }
+
+  .heroTitle {
+    font-size: 38px;
+    max-width: 16ch;
+  }
+
+  .collectionsSection {
+    padding: 52px 16px 56px;
+  }
+
+  .collectionsTitle {
+    margin: 10px 0 22px;
+    font-size: 34px;
+  }
+
+  .collectionCard {
+    padding: 22px 18px;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .cardsStack {
+    height: 210vh;
+    max-width: 100%;
+  }
+
+  .cardsStackItem {
+    position: sticky;
+    top: 88px;
+  }
+
+  .collectionCardOne {
+    transform: scale(calc(1 - (var(--stack-progress) * 0.045)));
+    filter: saturate(calc(1 - (var(--stack-progress) * 0.1)));
+    transition: transform 40ms linear, filter 40ms linear;
+  }
+
+  .collectionCardTwo {
+    margin-top: 34vh;
+    transform: translateY(calc((1 - var(--stack-progress)) * 110px));
+    box-shadow: 0 18px 46px rgba(0, 0, 0, 0.14);
+    transition: transform 40ms linear;
+  }
+
+  .collectionHeading {
+    margin: 10px 0 10px;
+    font-size: 24px;
+  }
+
+  .collectionText {
+    font-size: 13px;
+  }
+
+  .collectionReadMore {
+    margin-top: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .collectionsKicker,
+  .collectionsTitle,
+  .cardsStack {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+

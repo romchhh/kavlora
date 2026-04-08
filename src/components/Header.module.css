@@ -65,13 +65,11 @@
 }
 
 .langDropdownTrigger {
-  min-width: 92px;
-  height: 36px;
-  padding: 0 12px;
+  padding: 3px 10px;
   display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 10px;
+  justify-content: center;
+  gap: 8px;
   border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: 12px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.08) 100%);
@@ -81,6 +79,12 @@
   line-height: 1;
   cursor: pointer;
   transition: border-color 150ms ease, background-color 150ms ease, box-shadow 150ms ease;
+}
+
+.languageIcon {
+  width: 35px;
+  height: 35px;
+  filter: brightness(0) invert(1);
 }
 
 .langDropdownTrigger:hover {
@@ -111,7 +115,7 @@
   position: absolute;
   top: calc(100% + 8px);
   right: 0;
-  min-width: 170px;
+  min-width: 100px;
   padding: 8px;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -161,13 +165,12 @@
   display: none;
   align-items: center;
   justify-content: center;
-  min-height: 36px;
-  padding: 0 14px;
-  border: 1px solid rgba(255, 255, 255, 0.32);
+  padding: 10px 16px;
+  border: 2px solid rgba(255, 255, 255, 0.645);
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.12);
   color: #fff;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 600;
   line-height: 1;
   cursor: pointer;
@@ -336,6 +339,14 @@
   animation: slideInRight 520ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+.mobileLogoLink {
+  position: absolute;
+  top: 26px;
+  left: 24px;
+  display: inline-flex;
+  align-items: center;
+}
+
 .mobileClose {
   position: absolute;
   top: 26px;
@@ -373,24 +384,15 @@
 }
 
 .mobileLangSwitcher {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin: 20px auto 0 auto;
-  gap: 8px;
-  padding: 6px;
+  margin: 20px auto 0;
   width: fit-content;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(5px);
 }
 
 .mobileModalCta {
   width: fit-content;
   margin-top: 4px;
   padding: 10px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.44);
+  border: 2px solid rgba(255, 255, 255, 0.44);
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.12);
   color: #fff;
@@ -406,41 +408,88 @@
   border-color: rgba(255, 255, 255, 0.6);
 }
 
-.mobileLangButton {
+.mobileLangDropdown {
+  position: relative;
+}
+
+.mobileLangTrigger {
+  min-width: 54px;
+  height: 38px;
+  padding: 0 10px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 58px;
-  height: 36px;
-  padding: 0 13px;
-  border: 1px solid transparent;
-  border-radius: 999px;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.mobileLangChevron {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  border-right: 1.8px solid currentColor;
+  border-bottom: 1.8px solid currentColor;
+  transform: rotate(45deg) translateY(-1px);
+  transition: transform 150ms ease;
+}
+
+.mobileLangDropdownOpen .mobileLangChevron {
+  transform: rotate(225deg) translateY(1px);
+}
+
+.mobileLangMenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 178px;
+  padding: 8px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(0, 0, 0, 0.94);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition: opacity 150ms ease, transform 150ms ease, visibility 150ms ease;
+}
+
+.mobileLangDropdownOpen .mobileLangMenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.mobileLangItem {
+  width: 100%;
+  display: block;
+  padding: 9px 10px;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
   color: rgba(255, 255, 255, 0.88);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: transform 150ms ease, background-color 150ms ease, color 150ms ease, border-color 150ms ease,
-    box-shadow 150ms ease;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
 }
 
-.mobileLangButton:hover {
-  transform: translateY(-1px);
+.mobileLangItem:hover {
   background: rgba(255, 255, 255, 0.14);
-  border-color: rgba(255, 255, 255, 0.26);
+  color: #fff;
 }
 
-.mobileLangButton:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
-}
-
-.mobileLangButtonActive {
-  background: linear-gradient(180deg, #ffffff 0%, #eaf0eb 100%);
-  color: var(--brand-primary);
-  border-color: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.28);
+.mobileLangItemActive {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
 }
 
 .mobileServicesRow {
@@ -509,9 +558,16 @@
 }
 
 @media (max-width: 768px) {
+  .mobileLogoLink {
+    top: 26px;
+    left: 24px;
+  }
+
   .mobileNav {
-    padding: 240px 67px 36px;
+    padding: 180px 67px 36px;
     gap: 18px;
+    align-items: center;
+    justify-content: center;
   }
 
   .mobileLink {
@@ -519,8 +575,17 @@
   }
 
   .mobileModalCta {
+    font-size: 20px;
+    padding: 10px 16px;
+  }
+
+  .mobileLangTrigger {
+    min-width: 50px;
     font-size: 16px;
-    padding: 9px 12px;
+  }
+
+  .mobileLangMenu {
+    min-width: 100px;
   }
 
   .mobileSublink {

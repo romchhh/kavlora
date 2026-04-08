@@ -33,8 +33,12 @@ Kavlora виготовляє дубові ламелі від 2 мм та заг
 
 ## Сторінки
 - Головна: ${origin}/
+- Переваги: ${origin}/advantages
+- Послуги: ${origin}/services
 - Про нас: ${origin}/about-us
-- Контакти: ${origin}/contact`;
+- Контакти: ${origin}/contact
+- Дубова ламель: ${origin}/oak-lamella
+- Заготовка під паркет: ${origin}/parquet`;
 
   res.setHeader("Content-Type", "text/plain; charset=utf-8");
   res.write(aiText);

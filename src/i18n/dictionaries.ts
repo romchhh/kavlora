@@ -106,6 +106,61 @@ export type AppDictionary = {
     agreementLabel: string;
     submit: string;
   };
+  services: {
+    seoTitle: string;
+    seoDescription: string;
+    heroAriaLabel: string;
+    heroKicker: string;
+    heroTitle: string;
+    collectionsAriaLabel: string;
+    collectionsKicker: string;
+    collectionsTitle: string;
+    cards: Array<{
+      index: string;
+      title: string;
+      text: string;
+      imageAlt: string;
+      ctaLabel: string;
+    }>;
+  };
+  productPages: {
+    oakLamella: {
+      seoTitle: string;
+      seoDescription: string;
+      introAriaLabel: string;
+      introKicker: string;
+      introTitleMuted: string;
+      introTitleStrong: string;
+      introRightText: string;
+      galleryAriaLabel: string;
+      galleryImages: Array<{ src: string; alt: string }>;
+      pointsAriaLabel: string;
+      points: Array<{ index: string; title: string; text: string }>;
+      nextStepAriaLabel: string;
+      nextStepKicker: string;
+      nextStepTitle: string;
+      nextStepText: string;
+      nextStepCta: string;
+    };
+    parquet: {
+      seoTitle: string;
+      seoDescription: string;
+      introAriaLabel: string;
+      introKicker: string;
+      introTitleMuted: string;
+      introTitleStrong: string;
+      introRightText: string;
+      galleryAriaLabel: string;
+      galleryImages: Array<{ src: string; alt: string }>;
+      pointsAriaLabel: string;
+      points: Array<{ index: string; title: string; text: string }>;
+      nextStepAriaLabel: string;
+      nextStepKicker: string;
+      nextStepTitle: string;
+      nextStepText: string;
+      nextStepCta: string;
+    };
+  };
   notFound: {
     seoTitle: string;
     seoDescription: string;
@@ -178,7 +233,7 @@ export const DICTIONARIES: Record<LocaleCode, AppDictionary> = {
       showcaseToggleClose: "Згорнути деталі",
       showcaseTabs: [
         {
-          label: "Перевага 1",
+          label: "Якість продукції",
           headline: "Стабільна геометрія та контроль якості",
           imageSrc: "/main/photo4.png",
           imageAlt: "Контроль якості продукції",
@@ -186,7 +241,7 @@ export const DICTIONARIES: Record<LocaleCode, AppDictionary> = {
             "Кожна партія проходить перевірку на ключових етапах виробництва, щоб забезпечити стабільні параметри та прогнозований результат для вашого виробництва.",
         },
         {
-          label: "Перевага 2",
+          label: "Індивідуальний підхід",
           headline: "Гнучкість під індивідуальні параметри",
           imageSrc: "/main/photo5.png",
           imageAlt: "Індивідуальне налаштування виробництва",
@@ -194,7 +249,7 @@ export const DICTIONARIES: Record<LocaleCode, AppDictionary> = {
             "Ми виготовляємо ламелі та заготовки під ваші розміри, класи якості й специфікації, що допомагає швидше інтегрувати матеріал у ваші процеси.",
         },
         {
-          label: "Перевага 3",
+          label: "Масштаб виробництва",
           headline: "Масштаб виробництва та надійні поставки",
           imageSrc: "/main/photo6.png",
           imageAlt: "Виробничі потужності Kavlora",
@@ -202,7 +257,7 @@ export const DICTIONARIES: Record<LocaleCode, AppDictionary> = {
             "Площа комплексу понад 10 000 м2 та команда фахівців дозволяють нам підтримувати стабільні обсяги виробництва й ритмічні поставки.",
         },
         {
-          label: "Перевага 4",
+          label: "Сертифікація FSC",
           headline: "Відповідальне походження сировини",
           imageSrc: "/main/photo7.png",
           imageAlt: "Сертифікована деревина",
@@ -336,6 +391,122 @@ export const DICTIONARIES: Record<LocaleCode, AppDictionary> = {
       agreementLabel: "Я погоджуюся з тим, що мої введені дані збираються та зберігаються.",
       submit: "Відправити",
     },
+    services: {
+      seoTitle: "Послуги | Kavlora",
+      seoDescription: "Послуги Kavlora: дубові ламелі та заготовки для паркетної дошки.",
+      heroAriaLabel: "Послуги",
+      heroKicker: "ПОСЛУГИ",
+      heroTitle: "Дубові ламелі та заготовки для паркетної дошки",
+      collectionsAriaLabel: "Порівняння продукції",
+      collectionsKicker: "ПОРІВНЯННЯ ПРОДУКЦІЇ",
+      collectionsTitle: "Знайдіть ваш товар",
+      cards: [
+        {
+          index: "01",
+          title: "Дубова ламель",
+          text:
+            "Виготовляємо дубову ламель як надійний напівфабрикат для меблів, підлоги, сходів, дверей, стільниць і клеєних виробів. Працюємо з товщиною 2-6 мм, шириною 50-300 мм і довжиною до 3000 мм. Спеціалізуємось саме на цільноламельному формат, так як довгі суцільні елементи дають преміальний вигляд і стабільну якість.",
+          imageAlt: "Дубова ламель",
+          ctaLabel: "Детальніше",
+        },
+        {
+          index: "02",
+          title: "Заготовка під паркет",
+          text:
+            "Постачаємо дубову заготовку, з якої формується готова паркетна дошка. Це підготовлена основа зі стабільною вологістю, правильною геометрією та мінімумом дефектів, із запасом під фінішну обробку. Ми працюємо саме із заготовкою під масивний паркет із цільного дуба.",
+          imageAlt: "Заготовка під паркет",
+          ctaLabel: "Детальніше",
+        },
+      ],
+    },
+    productPages: {
+      oakLamella: {
+        seoTitle: "Дубова ламель | Kavlora",
+        seoDescription: "Дубова ламель — універсальний напівфабрикат з дуба для меблів, підлоги, сходів, дверей та клеєних виробів.",
+        introAriaLabel: "Дубова ламель",
+        introKicker: "Дубова ламель",
+        introTitleMuted: "Дубова ламель",
+        introTitleStrong: "— це заготовка з дуба у вигляді тонкої дошки або планки.",
+        introRightText:
+          "Використовується як універсальний напівфабрикат для подальшого виробництва. Типові параметри: товщина від 2 до 6 мм, ширина від 50 до 300 мм, довжина до 3000 мм.",
+        galleryAriaLabel: "Фото дубової ламелі",
+        galleryImages: [
+          { src: "/services/lamels.png", alt: "Дубова ламель" },
+          { src: "/services/lamels2.jpeg", alt: "Дубова ламель" },
+          { src: "/services/lamels3.jpeg", alt: "Дубова ламель" },
+        ],
+        pointsAriaLabel: "Переваги дубової ламелі",
+        points: [
+          {
+            index: "01",
+            title: "Сфери застосування",
+            text:
+              "Дубова ламель широко використовується у меблевому виробництві, для паркету та підлоги, сходів, дверей, стільниць, щитів і клеєних виробів. Це універсальний напівфабрикат, який легко адаптується під різні задачі.",
+          },
+          {
+            index: "02",
+            title: "Цільноламельний формат",
+            text:
+              "Найбільш цінується цільноламельна ламель — довгі суцільні елементи з виразною природною текстурою дуба. Саме такий формат ми виготовляємо, оскільки він забезпечує преміальний вигляд і стабільний результат у готовому виробі.",
+          },
+          {
+            index: "03",
+            title: "Якість і контроль параметрів",
+            text:
+              "Якість дубової ламелі визначається сортом, вологістю, розміром, наявністю сучків, кольором і текстурою. Ми виробляємо матеріал від сорту A до D/F, а 8 сушильних камер на заводі дозволяють точно доводити вологість до заданих параметрів.",
+          },
+        ],
+        nextStepAriaLabel: "Оформіть запит на виробництво",
+        nextStepKicker: "НАСТУПНИЙ КРОК",
+        nextStepTitle: "Оформіть запит на виробництво",
+        nextStepText:
+          "Підберемо формат, сортність і технічні параметри під конкретну задачу. Залиште запит через кнопку нижче, і ми зв’яжемося для уточнення деталей.",
+        nextStepCta: "ЗАМОВИТИ",
+      },
+      parquet: {
+        seoTitle: "Заготовка під паркет | Kavlora",
+        seoDescription: "Заготовка під паркет — дубова основа для виготовлення готової паркетної планки з контрольованими параметрами.",
+        introAriaLabel: "Заготовка під паркет",
+        introKicker: "Заготовка під паркет",
+        introTitleMuted: "Заготовка під паркет",
+        introTitleStrong: "— це дерев’яний напівфабрикат, з якого потім виготовляють готову паркетну планку.",
+        introRightText:
+          "Простіше кажучи, це ще не готовий паркет, а підготовлений брусок або дошка, який має потрібну породу дерева, приблизні розміри та вологість, але ще потребує доробки. Якщо коротко: заготовка під паркет = напівоброблена основа для майбутньої паркетної дошки.",
+        galleryAriaLabel: "Фото заготовки під паркет",
+        galleryImages: [
+          { src: "/services/parquet3.png", alt: "Заготовка під паркет" },
+          { src: "/services/parquet.jpeg", alt: "Заготовка під паркет" },
+          { src: "/services/parquet2.png", alt: "Заготовка під паркет" },
+        ],
+        pointsAriaLabel: "Переваги заготовки під паркет",
+        points: [
+          {
+            index: "01",
+            title: "Етапи доробки",
+            text:
+              "Заготовку калібрують по товщині та ширині, профілюють і нарізають у точний розмір. Далі формують паз/гребінь або замок, виконують шліфування. За необхідності застосовують тонування, брашування та фінішне покриття маслом чи лаком.",
+          },
+          {
+            index: "02",
+            title: "Якість для дубового паркету",
+            text:
+              "Важлива стабільна вологість і правильна геометрія, мінімум дефектів та запас по розміру для фінішної обробки — щоб отримати передбачуваний результат у готовій паркетній планці.",
+          },
+          {
+            index: "03",
+            title: "Різниця у конструкції",
+            text:
+              "Масивний паркет: заготовка з цільного дуба (саме таку ми виготовляємо). Інженерний паркет: верхній дубовий шар, який клеять на фанеру або іншу основу.",
+          },
+        ],
+        nextStepAriaLabel: "Оформіть запит на виробництво",
+        nextStepKicker: "НАСТУПНИЙ КРОК",
+        nextStepTitle: "Оформіть запит на виробництво",
+        nextStepText:
+          "Підберемо заготовку під конкретну задачу. Залиште запит через кнопку нижче, і ми зв’яжемося для уточнення деталей.",
+        nextStepCta: "ЗАМОВИТИ",
+      },
+    },
     notFound: {
       seoTitle: "Сторінку не знайдено | Kavlora",
       seoDescription: "Сторінку не знайдено. Поверніться на головну сторінку Kavlora.",
@@ -403,7 +574,7 @@ export const DICTIONARIES: Record<LocaleCode, AppDictionary> = {
       showcaseToggleClose: "Collapse details",
       showcaseTabs: [
         {
-          label: "Benefit 1",
+          label: "Product quality",
           headline: "Stable geometry and quality control",
           imageSrc: "/main/photo4.png",
           imageAlt: "Product quality control",
@@ -411,7 +582,7 @@ export const DICTIONARIES: Record<LocaleCode, AppDictionary> = {
             "Every batch is checked at critical production stages to ensure stable dimensions and predictable performance for your workflow.",
         },
         {
-          label: "Benefit 2",
+          label: "Individual approach",
           headline: "Flexible manufacturing by your specification",
           imageSrc: "/main/photo5.png",
           imageAlt: "Custom production setup",
@@ -419,7 +590,7 @@ export const DICTIONARIES: Record<LocaleCode, AppDictionary> = {
             "We manufacture lamellas and blanks by your dimensions, grade, and requirements to fit smoothly into your process.",
         },
         {
-          label: "Benefit 3",
+          label: "Production scale",
           headline: "Production scale and reliable deliveries",
           imageSrc: "/main/photo6.png",
           imageAlt: "Kavlora production facilities",
@@ -427,7 +598,7 @@ export const DICTIONARIES: Record<LocaleCode, AppDictionary> = {
             "A 10,000 m2 production complex and an experienced team allow us to sustain stable volumes and consistent shipment schedules.",
         },
         {
-          label: "Benefit 4",
+          label: "FSC certification",
           headline: "Responsible raw material sourcing",
           imageSrc: "/main/photo7.png",
           imageAlt: "Certified timber",
@@ -560,6 +731,124 @@ export const DICTIONARIES: Record<LocaleCode, AppDictionary> = {
       agreementLabel: "I agree that my entered data can be collected and stored.",
       submit: "Submit",
     },
+    services: {
+      seoTitle: "Services | Kavlora",
+      seoDescription: "Explore Kavlora services: oak lamellas and parquet board blanks.",
+      heroAriaLabel: "Services",
+      heroKicker: "SERVICES",
+      heroTitle: "Oak lamellas and parquet blanks",
+      collectionsAriaLabel: "Product comparison",
+      collectionsKicker: "COMPARE PRODUCTS",
+      collectionsTitle: "Find your product",
+      cards: [
+        {
+          index: "01",
+          title: "Oak lamella",
+          text:
+            "We manufacture oak lamellas as a reliable semi-finished product for furniture, flooring, stairs, doors, countertops, and engineered wood products. We work with thicknesses of 2-6 mm, widths of 50-300 mm, and lengths up to 3000 mm. We specialize in solid-lamella format because long, continuous elements provide a premium look and consistently stable quality.",
+          imageAlt: "Oak lamella",
+          ctaLabel: "Learn more",
+        },
+        {
+          index: "02",
+          title: "Parquet blank",
+          text:
+            "We supply oak blanks used to produce finished parquet boards. This is a prepared base with stable moisture content, accurate geometry, and minimal defects, with allowance for final finishing. We focus specifically on blanks for solid oak parquet.",
+          imageAlt: "Parquet blank",
+          ctaLabel: "Learn more",
+        },
+      ],
+    },
+    productPages: {
+      oakLamella: {
+        seoTitle: "Oak lamella | Kavlora",
+        seoDescription:
+          "Oak lamella is a versatile semi-finished oak product for furniture, flooring, stairs, doors, countertops, and engineered wood products.",
+        introAriaLabel: "Oak lamella",
+        introKicker: "Oak lamella",
+        introTitleMuted: "Oak lamella",
+        introTitleStrong: "— a thin oak board or strip used as a semi-finished product.",
+        introRightText:
+          "Used as a universal semi-finished product for further manufacturing. Typical parameters: thickness 2–6 mm, width 50–300 mm, length up to 3000 mm.",
+        galleryAriaLabel: "Oak lamella photos",
+        galleryImages: [
+          { src: "/services/lamels.png", alt: "Oak lamella" },
+          { src: "/services/lamels2.jpeg", alt: "Oak lamella" },
+          { src: "/services/lamels3.jpeg", alt: "Oak lamella" },
+        ],
+        pointsAriaLabel: "Oak lamella details",
+        points: [
+          {
+            index: "01",
+            title: "Application areas",
+            text:
+              "Oak lamella is widely used in furniture manufacturing, parquet and flooring, stairs, doors, countertops, panels, and glued products. It is a universal semi-finished product that can be adapted to many tasks.",
+          },
+          {
+            index: "02",
+            title: "Solid-lamella format",
+            text:
+              "The most valued option is solid-lamella: long, continuous elements with expressive natural oak grain. This is exactly the format we produce because it delivers a premium look and stable results in the final product.",
+          },
+          {
+            index: "03",
+            title: "Quality and parameter control",
+            text:
+              "Quality is defined by grade, moisture content, dimensions, knot presence, color, and grain. We produce material from grade A to D/F, and 8 drying chambers allow us to reach target moisture precisely.",
+          },
+        ],
+        nextStepAriaLabel: "Submit a production request",
+        nextStepKicker: "NEXT STEP",
+        nextStepTitle: "Submit a production request",
+        nextStepText:
+          "We will help you choose the format, grade, and technical parameters for your specific task. Leave a request via the button below, and we will contact you to clarify the details.",
+        nextStepCta: "ORDER",
+      },
+      parquet: {
+        seoTitle: "Parquet blank | Kavlora",
+        seoDescription:
+          "A parquet blank is an oak base used to manufacture finished parquet boards with controlled moisture and geometry.",
+        introAriaLabel: "Parquet blank",
+        introKicker: "Parquet blank",
+        introTitleMuted: "Parquet blank",
+        introTitleStrong: "— a wooden semi-finished product used to manufacture a finished parquet plank.",
+        introRightText:
+          "Simply put, it is not finished parquet yet, but a prepared bar or board with the required wood species, approximate dimensions, and moisture content, which still needs further processing.",
+        galleryAriaLabel: "Parquet blank photos",
+        galleryImages: [
+          { src: "/services/parquet3.png", alt: "Parquet blank" },
+          { src: "/services/parquet.jpeg", alt: "Parquet blank" },
+          { src: "/services/parquet2.png", alt: "Parquet blank" },
+        ],
+        pointsAriaLabel: "Parquet blank details",
+        points: [
+          {
+            index: "01",
+            title: "Processing stages",
+            text:
+              "The blank is calibrated in thickness and width, profiled and cut to exact size. Then a tongue-and-groove or lock is formed and sanding is performed. If needed, toning, brushing, and final finishing with oil or lacquer are applied.",
+          },
+          {
+            index: "02",
+            title: "Quality for oak parquet",
+            text:
+              "Stable moisture and correct geometry matter, with minimal defects and allowance for final finishing — to ensure predictable results in the finished parquet plank.",
+          },
+          {
+            index: "03",
+            title: "Construction differences",
+            text:
+              "Solid parquet: a blank made of solid oak (this is what we produce). Engineered parquet: a top oak layer glued to plywood or another base.",
+          },
+        ],
+        nextStepAriaLabel: "Submit a production request",
+        nextStepKicker: "NEXT STEP",
+        nextStepTitle: "Submit a production request",
+        nextStepText:
+          "We will help you choose a blank for your specific task. Leave a request via the button below, and we will contact you to clarify the details.",
+        nextStepCta: "ORDER",
+      },
+    },
     notFound: {
       seoTitle: "Page not found | Kavlora",
       seoDescription: "Page not found. Return to the Kavlora home page.",
@@ -624,28 +913,28 @@ export const DICTIONARIES: Record<LocaleCode, AppDictionary> = {
       showcaseToggleClose: "收起详情",
       showcaseTabs: [
         {
-          label: "优势 1",
+          label: "产品质量",
           headline: "稳定尺寸与质量控制",
           imageSrc: "/main/photo4.png",
           imageAlt: "产品质量控制",
           details: "每个关键生产环节都进行检测，确保尺寸稳定、品质可预测，方便您后续加工使用。",
         },
         {
-          label: "优势 2",
+          label: "个性化方案",
           headline: "按需求灵活定制",
           imageSrc: "/main/photo5.png",
           imageAlt: "定制化生产",
           details: "我们可按尺寸、等级与技术要求生产，帮助您更顺畅地接入现有生产流程。",
         },
         {
-          label: "优势 3",
+          label: "生产规模",
           headline: "产能规模与稳定交付",
           imageSrc: "/main/photo6.png",
           imageAlt: "Kavlora 产能",
           details: "超过 10,000 平方米的生产基地和专业团队，保障稳定产量与规律交付。",
         },
         {
-          label: "优势 4",
+          label: "FSC 认证",
           headline: "可追溯且负责的原料来源",
           imageSrc: "/main/photo7.png",
           imageAlt: "认证木材",
@@ -768,6 +1057,122 @@ export const DICTIONARIES: Record<LocaleCode, AppDictionary> = {
       detailsPlaceholder: "请描述您的需求",
       agreementLabel: "我同意所填写的数据被收集与存储。",
       submit: "提交",
+    },
+    services: {
+      seoTitle: "服务 | Kavlora",
+      seoDescription: "了解 Kavlora 的服务：橡木贴片与地板坯料。",
+      heroAriaLabel: "服务",
+      heroKicker: "服务",
+      heroTitle: "橡木贴片与地板坯料",
+      collectionsAriaLabel: "产品对比",
+      collectionsKicker: "产品对比",
+      collectionsTitle: "找到适合您的产品",
+      cards: [
+        {
+          index: "01",
+          title: "橡木贴片",
+          text:
+            "我们生产橡木贴片，作为家具、地板、楼梯、门、台面以及胶合木制品的可靠半成品。可加工厚度 2-6 mm、宽度 50-300 mm、长度最长 3000 mm。我们专注于整片（通长）贴片形式，因为更长的连续构件能呈现更高级的外观，并保持稳定一致的品质。",
+          imageAlt: "橡木贴片",
+          ctaLabel: "了解更多",
+        },
+        {
+          index: "02",
+          title: "实木地板坯料",
+          text:
+            "我们供应用于生产成品地板板材的橡木坯料。该坯料具备稳定的含水率、准确的几何尺寸和较少缺陷，并预留后续精加工余量。我们专注于由整块橡木制成的实木地板用坯料。",
+          imageAlt: "实木地板坯料",
+          ctaLabel: "了解更多",
+        },
+      ],
+    },
+    productPages: {
+      oakLamella: {
+        seoTitle: "橡木贴片 | Kavlora",
+        seoDescription: "橡木贴片是一种用途广泛的橡木半成品，可用于家具、地板、楼梯、门、台面及胶合木制品。",
+        introAriaLabel: "橡木贴片",
+        introKicker: "橡木贴片",
+        introTitleMuted: "橡木贴片",
+        introTitleStrong: "— 由橡木制成的薄板/木条形态的半成品。",
+        introRightText:
+          "作为后续生产的通用半成品使用。典型参数：厚度 2–6 mm，宽度 50–300 mm，长度最长 3000 mm。",
+        galleryAriaLabel: "橡木贴片图片",
+        galleryImages: [
+          { src: "/services/lamels.png", alt: "橡木贴片" },
+          { src: "/services/lamels2.jpeg", alt: "橡木贴片" },
+          { src: "/services/lamels3.jpeg", alt: "橡木贴片" },
+        ],
+        pointsAriaLabel: "橡木贴片要点",
+        points: [
+          {
+            index: "01",
+            title: "应用领域",
+            text:
+              "橡木贴片广泛用于家具制造，以及地板/木地板、楼梯、门、台面、拼板和胶合制品等。它是一种通用半成品，可灵活适配不同需求。",
+          },
+          {
+            index: "02",
+            title: "整片（通长）贴片",
+            text:
+              "最受青睐的是整片（通长）贴片：更长的连续构件能呈现橡木清晰自然纹理。我们专注生产这种形式，因为它能带来更高级的外观与稳定的成品效果。",
+          },
+          {
+            index: "03",
+            title: "品质与参数控制",
+            text:
+              "品质由等级、含水率、尺寸、节疤情况、颜色与纹理等决定。我们可提供 A 至 D/F 等级材料；工厂配备 8 间干燥窑，可将含水率精准控制到目标参数。",
+          },
+        ],
+        nextStepAriaLabel: "提交生产需求",
+        nextStepKicker: "下一步",
+        nextStepTitle: "提交生产需求",
+        nextStepText:
+          "我们将为您的具体用途匹配合适的规格、等级与技术参数。点击下方按钮提交需求，我们会联系您确认细节。",
+        nextStepCta: "提交",
+      },
+      parquet: {
+        seoTitle: "实木地板坯料 | Kavlora",
+        seoDescription: "实木地板坯料是用于制作成品地板板材的橡木基础材料，具备稳定含水率与几何精度。",
+        introAriaLabel: "实木地板坯料",
+        introKicker: "实木地板坯料",
+        introTitleMuted: "实木地板坯料",
+        introTitleStrong: "— 用于制造成品地板板条的木质半成品。",
+        introRightText:
+          "简单来说，它还不是成品地板，而是准备好的木方或木板：树种、初步尺寸与含水率已满足要求，但仍需要进一步加工。",
+        galleryAriaLabel: "地板坯料图片",
+        galleryImages: [
+          { src: "/services/parquet3.png", alt: "实木地板坯料" },
+          { src: "/services/parquet.jpeg", alt: "实木地板坯料" },
+          { src: "/services/parquet2.png", alt: "实木地板坯料" },
+        ],
+        pointsAriaLabel: "地板坯料要点",
+        points: [
+          {
+            index: "01",
+            title: "加工步骤",
+            text:
+              "坯料会进行厚度与宽度校准、成型与精准切割；随后加工榫槽/锁扣并打磨。必要时可进行着色、拉丝，以及油/清漆等最终表面处理。",
+          },
+          {
+            index: "02",
+            title: "橡木地板的品质要求",
+            text:
+              "稳定的含水率与正确几何尺寸、尽量少的缺陷，以及预留精加工余量，能确保最终地板板条的效果更可预测。",
+          },
+          {
+            index: "03",
+            title: "结构差异",
+            text:
+              "实木地板：整块橡木坯料（我们生产的就是这种）。工程地板：上层橡木面层胶合在胶合板或其他基材上。",
+          },
+        ],
+        nextStepAriaLabel: "提交生产需求",
+        nextStepKicker: "下一步",
+        nextStepTitle: "提交生产需求",
+        nextStepText:
+          "我们会根据您的具体用途匹配合适的坯料。点击下方按钮提交需求，我们会联系您确认细节。",
+        nextStepCta: "提交",
+      },
     },
     notFound: {
       seoTitle: "页面未找到 | Kavlora",

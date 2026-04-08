@@ -10,8 +10,11 @@ type SitemapPage = {
 const PAGES: SitemapPage[] = [
   { path: "/", changefreq: "daily", priority: "1.0" },
   { path: "/advantages", changefreq: "weekly", priority: "0.9" },
+  { path: "/services", changefreq: "weekly", priority: "0.9" },
   { path: "/about-us", changefreq: "weekly", priority: "0.9" },
   { path: "/contact", changefreq: "weekly", priority: "0.9" },
+  { path: "/oak-lamella", changefreq: "weekly", priority: "0.8" },
+  { path: "/parquet", changefreq: "weekly", priority: "0.8" },
 ];
 
 function getOrigin(req: Parameters<GetServerSideProps>[0]["req"]): string {

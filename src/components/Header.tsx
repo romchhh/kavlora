@@ -12,9 +12,9 @@ type HeaderProps = {
 };
 
 const LANGUAGES = [
-  { code: "uk", label: "Українська", shortLabel: "UA" },
-  { code: "en", label: "English", shortLabel: "EN" },
-  { code: "zh-CN", label: "中文", shortLabel: "中文" },
+  { code: "uk", label: "Українська", menuLabel: "UA" },
+  { code: "en", label: "English", menuLabel: "EN" },
+  { code: "zh-CN", label: "中文", menuLabel: "zh-CN" },
 ] as const;
 type LocaleCode = (typeof LANGUAGES)[number]["code"];
 
@@ -51,10 +51,8 @@ const HEADER_COPY: Record<LocaleCode, HeaderCopy> = {
     languageSwitcherLabel: "Перемикач мови",
     switchLanguagePrefix: "Перемкнути мову на",
     serviceTypes: [
-      { label: "ТИП 1", href: "#services-type-1" },
-      { label: "ТИП 2", href: "#services-type-2" },
-      { label: "ТИП 3", href: "#services-type-3" },
-      { label: "ТИП 4", href: "#services-type-4" },
+      { label: "Дубові ламелі", href: "/oak-lamella" },
+      { label: "Заготовки для паркетної дошки", href: "/parquet" },
     ],
   },
   en: {
@@ -72,10 +70,8 @@ const HEADER_COPY: Record<LocaleCode, HeaderCopy> = {
     languageSwitcherLabel: "Language switcher",
     switchLanguagePrefix: "Switch language to",
     serviceTypes: [
-      { label: "TYPE 1", href: "#services-type-1" },
-      { label: "TYPE 2", href: "#services-type-2" },
-      { label: "TYPE 3", href: "#services-type-3" },
-      { label: "TYPE 4", href: "#services-type-4" },
+      { label: "Oak lamellas", href: "/oak-lamella" },
+      { label: "Parquet board blanks", href: "/parquet" },
     ],
   },
   "zh-CN": {
@@ -93,10 +89,8 @@ const HEADER_COPY: Record<LocaleCode, HeaderCopy> = {
     languageSwitcherLabel: "语言切换",
     switchLanguagePrefix: "切换语言到",
     serviceTypes: [
-      { label: "类型 1", href: "#services-type-1" },
-      { label: "类型 2", href: "#services-type-2" },
-      { label: "类型 3", href: "#services-type-3" },
-      { label: "类型 4", href: "#services-type-4" },
+      { label: "橡木贴片", href: "/oak-lamella" },
+      { label: "地板坯料", href: "/parquet" },
     ],
   },
 };
@@ -111,20 +105,23 @@ export function Header({ services, forceDark = false }: HeaderProps) {
   const router = useRouter();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileLangOpen, setMobileLangOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [desktopLangOpen, setDesktopLangOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const desktopLangRef = useRef<HTMLDivElement | null>(null);
+  const mobileLangRef = useRef<HTMLDivElement | null>(null);
   const servicesButtonId = useId();
   const servicesMenuId = useMemo(() => `${servicesButtonId}-menu`, [servicesButtonId]);
   const desktopLangButtonId = useId();
   const desktopLangMenuId = useMemo(() => `${desktopLangButtonId}-menu`, [desktopLangButtonId]);
+  const mobileLangButtonId = useId();
+  const mobileLangMenuId = useMemo(() => `${mobileLangButtonId}-menu`, [mobileLangButtonId]);
   const currentLocale = resolveLocale(router.locale);
   const copy = HEADER_COPY[currentLocale];
   const menuServices = services ?? copy.serviceTypes;
-  const currentLanguage = LANGUAGES.find((language) => language.code === currentLocale) ?? LANGUAGES[0];
 
   function clearCloseTimer() {
     if (closeTimerRef.current) {
@@ -149,6 +146,7 @@ export function Header({ services, forceDark = false }: HeaderProps) {
         clearCloseTimer();
         setServicesOpen(false);
         setDesktopLangOpen(false);
+        setMobileLangOpen(false);
         setMobileOpen(false);
       }
     }
@@ -174,6 +172,9 @@ export function Header({ services, forceDark = false }: HeaderProps) {
     function onPointerDown(event: MouseEvent) {
       if (!desktopLangRef.current?.contains(event.target as Node)) {
         setDesktopLangOpen(false);
+      }
+      if (!mobileLangRef.current?.contains(event.target as Node)) {
+        setMobileLangOpen(false);
       }
     }
 
@@ -223,10 +224,11 @@ export function Header({ services, forceDark = false }: HeaderProps) {
 
             <div id={servicesMenuId} role="menu" className={styles.servicesMenu}>
               {menuServices.slice(0, 4).map((item) => (
-                <a
+                <Link
                   key={item.href}
                   role="menuitem"
                   href={item.href}
+                  locale={router.locale}
                   className={styles.servicesItem}
                   onClick={() => {
                     clearCloseTimer();
@@ -234,7 +236,7 @@ export function Header({ services, forceDark = false }: HeaderProps) {
                   }}
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -265,7 +267,14 @@ export function Header({ services, forceDark = false }: HeaderProps) {
                 aria-controls={desktopLangMenuId}
                 onClick={() => setDesktopLangOpen((prev) => !prev)}
               >
-                <span>{currentLanguage.shortLabel}</span>
+                <Image
+                  src="/language.svg"
+                  alt=""
+                  aria-hidden="true"
+                  width={18}
+                  height={18}
+                  className={styles.languageIcon}
+                />
                 <span className={styles.langDropdownChevron} aria-hidden="true" />
               </button>
               <div id={desktopLangMenuId} role="menu" className={styles.langDropdownMenu}>
@@ -287,7 +296,7 @@ export function Header({ services, forceDark = false }: HeaderProps) {
                       });
                     }}
                   >
-                    {language.label}
+                    {language.menuLabel}
                   </button>
                 ))}
               </div>
@@ -325,6 +334,18 @@ export function Header({ services, forceDark = false }: HeaderProps) {
       {mobileOpen ? (
         <div className={styles.mobileOverlay}>
           <div className={styles.mobileDrawer}>
+            <Link
+              href="/"
+              aria-label={copy.homeAriaLabel}
+              className={styles.mobileLogoLink}
+              onClick={() => {
+                setMobileOpen(false);
+                setMobileServicesOpen(false);
+                setMobileLangOpen(false);
+              }}
+            >
+              <Image src="/logo2.png" alt="Kavlora" width={160} height={38} priority />
+            </Link>
             <button
               type="button"
               className={styles.mobileClose}
@@ -332,6 +353,7 @@ export function Header({ services, forceDark = false }: HeaderProps) {
               onClick={() => {
                 setMobileOpen(false);
                 setMobileServicesOpen(false);
+                setMobileLangOpen(false);
               }}
             >
               <span />
@@ -346,6 +368,7 @@ export function Header({ services, forceDark = false }: HeaderProps) {
                   onClick={() => {
                     setMobileOpen(false);
                     setMobileServicesOpen(false);
+                    setMobileLangOpen(false);
                   }}
                 >
                   {copy.services}
@@ -368,17 +391,19 @@ export function Header({ services, forceDark = false }: HeaderProps) {
               {mobileServicesOpen ? (
                 <div className={styles.mobileSublist}>
                   {menuServices.slice(0, 4).map((item) => (
-                    <a
+                    <Link
                       key={item.href}
                       className={styles.mobileSublink}
                       href={item.href}
+                      locale={router.locale}
                       onClick={() => {
                         setMobileOpen(false);
                         setMobileServicesOpen(false);
+                        setMobileLangOpen(false);
                       }}
                     >
                       {item.label}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               ) : null}
@@ -389,6 +414,7 @@ export function Header({ services, forceDark = false }: HeaderProps) {
                 onClick={() => {
                   setMobileOpen(false);
                   setMobileServicesOpen(false);
+                  setMobileLangOpen(false);
                 }}
               >
                 {copy.advantages}
@@ -399,6 +425,7 @@ export function Header({ services, forceDark = false }: HeaderProps) {
                 onClick={() => {
                   setMobileOpen(false);
                   setMobileServicesOpen(false);
+                  setMobileLangOpen(false);
                 }}
               >
                 {copy.about}
@@ -409,6 +436,7 @@ export function Header({ services, forceDark = false }: HeaderProps) {
                 onClick={() => {
                   setMobileOpen(false);
                   setMobileServicesOpen(false);
+                  setMobileLangOpen(false);
                 }}
               >
                 {copy.contact}
@@ -419,30 +447,63 @@ export function Header({ services, forceDark = false }: HeaderProps) {
                 onClick={() => {
                   setMobileOpen(false);
                   setMobileServicesOpen(false);
+                  setMobileLangOpen(false);
                   setIsContactModalOpen(true);
                 }}
               >
                 {copy.contactCta}
               </button>
               <div className={styles.mobileLangSwitcher} aria-label={copy.languageSwitcherLabel}>
-                {LANGUAGES.map((language) => (
-                  <Link
-                    key={`mobile-${language.code}`}
-                    href={router.asPath}
-                    locale={language.code}
-                    scroll={false}
-                    className={`${styles.mobileLangButton} ${
-                      currentLocale === language.code ? styles.mobileLangButtonActive : ""
-                    }`}
-                    aria-label={`${copy.switchLanguagePrefix} ${language.label}`}
-                    onClick={() => {
-                      setMobileOpen(false);
-                      setMobileServicesOpen(false);
-                    }}
+                <div
+                  ref={mobileLangRef}
+                  className={`${styles.mobileLangDropdown} ${mobileLangOpen ? styles.mobileLangDropdownOpen : ""}`}
+                >
+                  <button
+                    id={mobileLangButtonId}
+                    type="button"
+                    className={styles.mobileLangTrigger}
+                    aria-label={copy.languageSwitcherLabel}
+                    aria-haspopup="menu"
+                    aria-expanded={mobileLangOpen}
+                    aria-controls={mobileLangMenuId}
+                    onClick={() => setMobileLangOpen((prev) => !prev)}
                   >
-                    {language.shortLabel}
-                  </Link>
-                ))}
+                    <Image
+                      src="/language.svg"
+                      alt=""
+                      aria-hidden="true"
+                      width={18}
+                      height={18}
+                      className={styles.languageIcon}
+                    />
+                    <span className={styles.mobileLangChevron} aria-hidden="true" />
+                  </button>
+                  <div id={mobileLangMenuId} role="menu" className={styles.mobileLangMenu}>
+                    {LANGUAGES.map((language) => (
+                      <button
+                        key={`mobile-${language.code}`}
+                        type="button"
+                        role="menuitemradio"
+                        aria-checked={currentLocale === language.code}
+                        className={`${styles.mobileLangItem} ${
+                          currentLocale === language.code ? styles.mobileLangItemActive : ""
+                        }`}
+                        onClick={() => {
+                          setMobileLangOpen(false);
+                          setMobileOpen(false);
+                          setMobileServicesOpen(false);
+                          if (currentLocale === language.code) return;
+                          void router.push(router.asPath, router.asPath, {
+                            locale: language.code,
+                            scroll: false,
+                          });
+                        }}
+                      >
+                        {language.menuLabel}
+                      </button>
+                    ))}
+                  </div>
+                </div>
               </div>
             </nav>
           </div>
